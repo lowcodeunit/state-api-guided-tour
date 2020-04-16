@@ -23,9 +23,9 @@ using LCU.Personas.Enterprises;
 using LCU.Personas.Client.Applications;
 using Fathym.API;
 
-namespace LCU.State.API.NapkinIDE.NapkinIDE.ReplaceThis.State
+namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
 {
-    public class ReplaceThisStateHarness : LCUStateHarness<ReplaceThisState>
+    public class GuidedTourStateHarness : LCUStateHarness<GuidedTourState>
     {
         #region Fields
         #endregion
@@ -34,8 +34,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ReplaceThis.State
         #endregion
 
         #region Constructors
-        public ReplaceThisStateHarness(ReplaceThisState state)
-            : base(state ?? new ReplaceThisState())
+        public GuidedTourStateHarness(GuidedTourState state)
+            : base(state ?? new GuidedTourState())
         { }
         #endregion
 

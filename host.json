@@ -10,7 +10,7 @@
     },
     "extensions": {
         "durableTask": {
-            "hubName": "replacethis",
+            "hubName": "guidedtour",
             "storageProvider": {
               "connectionStringName": "LCU-STORAGE-CONNECTION",
               "partitionCount": 4
