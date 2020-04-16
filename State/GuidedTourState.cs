@@ -29,16 +29,22 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
         #endregion
 
         [DataMember]
-        public virtual bool CurrentTour { get; set; }
+        public virtual GuidedTour CurrentTour { get; set; }
 
         [DataMember]
         public virtual bool Loading { get; set; }
-    }
+   
+        [DataMember]
+        public virtual List<GuidedTour> Tours { get; set; }
+ }
 
     [Serializable]
     [DataContract]
     public class GuidedTour : BusinessModel<Guid>
     {
+        [DataMember]
+        public virtual string Lookup { get; set; }
+        
         [DataMember]
         public virtual int MinimumScreenSize { get; set; }
 

@@ -48,6 +48,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
 
                 var stateDetails = StateUtils.LoadStateDetails(req);
 
+                harness.Refresh();
+
                 return Status.Success;
             });
         }
