@@ -33,10 +33,10 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
 
         [DataMember]
         public virtual bool Loading { get; set; }
-   
+
         [DataMember]
         public virtual List<GuidedTour> Tours { get; set; }
- }
+    }
 
     [Serializable]
     [DataContract]
@@ -44,7 +44,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
     {
         [DataMember]
         public virtual string Lookup { get; set; }
-        
+
         [DataMember]
         public virtual int MinimumScreenSize { get; set; }
 
@@ -56,7 +56,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
 
         [DataMember]
         public virtual List<GuidedTourStep> Steps { get; set; }
-        
+
         [DataMember]
         public virtual bool UseOrb { get; set; }
     }
@@ -75,7 +75,11 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
         public virtual int HighlightPadding { get; set; }
 
         [DataMember]
-        public virtual OrientationConfiguration Orientation { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public virtual OrientationTypes Orientation { get; set; }
+
+        [DataMember]
+        public virtual OrientationConfiguration OrientationConfiguration { get; set; }
 
         [DataMember]
         public virtual bool SkipStep { get; set; }
@@ -95,7 +99,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
         [DataMember]
         public virtual string useHighlightPadding { get; set; }
     }
-    
+
     [Serializable]
     [DataContract]
     public class OrientationConfiguration
@@ -114,7 +118,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
     {
         [DataMember]
         public virtual string Content { get; set; }
-        
+
         [DataMember]
         public virtual string Title { get; set; }
     }
