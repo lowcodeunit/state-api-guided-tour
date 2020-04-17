@@ -40,12 +40,56 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
         #endregion
 
         #region API Methods
+        public virtual void LoadGuidedTours()
+        {
+            State.Tours = new List<GuidedTour>();
+
+            State.Tours.Add(createDemoTour("demo-tour"));
+        }
+
         public virtual void Refresh()
         {
-            State.CurrentTour = new GuidedTour()
+            LoadGuidedTours();
+
+            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "demo-tour");
+        }
+        #endregion
+
+        #region Helpers
+        protected virtual GuidedTour createCopyForNewTour(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-0000000000**"), // Change and ensure Guid is unique to all other tours, by replacing ** with next value (01, 02, 03...11, 12...)
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        Title = "LCU-Guided-Tour",
+                        Subtitle = "Guided Tour",
+                        Content = "Welcome to the LCU-Guided-Tour library! This library provides the functionality to do your own guided tour of an application. <br/><br/> Click the <b>Next</b> button to get started with an example Tour!"
+                    },
+                    new GuidedTourStep()
+                    {
+                        Title = "Title",
+                        Subtitle = "Guided Tour",
+                        Selector = "#guidedTourHeader",
+                        Orientation = OrientationTypes.Bottom,
+                        OrientationConfiguration = new OrientationConfiguration() { Orientation = OrientationTypes.Bottom },
+                        Content = "This be some content"
+                    },
+                }
+            };
+        }
+        
+        protected virtual GuidedTour createDemoTour(string lookup)
+        {
+            return new GuidedTour()
             {
                 ID = new Guid("00000000-0000-0000-0000-000000000001"),
-                Lookup = "demo-tour",
+                Lookup = lookup,
                 UseOrb = false,
                 Steps = new List<GuidedTourStep>()
                 {
