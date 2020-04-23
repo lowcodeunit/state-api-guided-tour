@@ -45,13 +45,15 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
             State.Tours = new List<GuidedTour>();
 
             State.Tours.Add(createDemoTour("demo-tour"));
+
+            State.Tours.Add(createLimitedTrialTour("limited-trial-tour"));
         }
 
         public virtual void Refresh()
         {
             LoadGuidedTours();
 
-            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "demo-tour");
+            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
         }
         #endregion
 
@@ -166,6 +168,50 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
                 }
             };
         }
+
+        protected virtual GuidedTour createLimitedTrialTour(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-000000000002"),
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        Title = "Welcome Page",
+                        Subtitle = "Limited Trial Tour",
+                        Content = "Welcome to the live demo of the Fathym Low-Code Framework. I’m <b>Thinky</b>! I’ll guide you through a few tours to show you some of Fathym’s low-code tools, such as the <b>Data Flow Manager</b> and <b>Data Applications</b>, and I’ll explain how to interact and dig deeper with the tools so you can customize them for your needs."
+                    },
+                    new GuidedTourStep()
+                    {
+                        Title = "Welcome Page Resources",
+                        Subtitle = "Limited Trial Tour",
+                        Selector = ".mat-tab-body-wrapper",
+                        Orientation = OrientationTypes.Left,
+                        Content = "Here are a number of resources and guided tours you can select that will educate you of the different developer journeys you can undertake through Fathym."
+                    },
+                    new GuidedTourStep()
+                    {
+                        Title = "Data Flows",
+                        Subtitle = "Limited Trial Tour",
+                        Selector = ".ide-side-bar-action:nth-of-type(2)",
+                        Orientation = OrientationTypes.Right,
+                        Content = "The <b>Data Flow Manager</b> is a powerful drag and drop interface for easily configuring and provisioning end-to-end cloud infrastructure. Navigate here to explore further."
+                    },
+                    new GuidedTourStep()
+                    {
+                        Title = "Data Applications",
+                        Subtitle = "Limited Trial Tour",
+                        Selector = ".ide-side-bar-action:nth-of-type(3)",
+                        Orientation = OrientationTypes.Right,
+                        Content = "<b>Data applications</b> are quick and easy ways to build and deliver enterprise scalable experiences to your users. Create your own, configure your own, or use pre-existing applications."
+                    }
+                }
+            };
+        }
+
         #endregion
     }
 }
