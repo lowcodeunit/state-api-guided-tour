@@ -77,7 +77,6 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
                         Subtitle = "Guided Tour",
                         Selector = "#guidedTourHeader",
                         Orientation = OrientationTypes.Bottom,
-                        OrientationConfiguration = new OrientationConfiguration() { Orientation = OrientationTypes.Bottom },
                         Content = "This be some content"
                     },
                 }
