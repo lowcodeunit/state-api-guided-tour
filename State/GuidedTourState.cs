@@ -79,9 +79,6 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
         public virtual OrientationTypes Orientation { get; set; }
 
         [DataMember]
-        public virtual OrientationConfiguration OrientationConfiguration { get; set; }
-
-        [DataMember]
         public virtual bool SkipStep { get; set; }
 
         [DataMember]
