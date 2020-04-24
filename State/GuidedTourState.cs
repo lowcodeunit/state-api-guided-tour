@@ -66,7 +66,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
 
     [Serializable]
     [DataContract]
-    public class GuidedTourStep
+    public class GuidedTourStep : BusinessModel<Guid>
     {
         [DataMember]
         public virtual int ActionDelay { get; set; }
