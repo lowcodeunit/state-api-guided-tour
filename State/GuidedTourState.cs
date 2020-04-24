@@ -43,6 +43,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
     public class GuidedTour : BusinessModel<Guid>
     {
         [DataMember]
+        public virtual bool IsFirstTimeViewing { get; set; }
+
+        [DataMember]
         public virtual string Lookup { get; set; }
 
         [DataMember]

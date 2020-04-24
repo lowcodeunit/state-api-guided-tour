@@ -174,18 +174,21 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
             return new GuidedTour()
             {
                 ID = new Guid("00000000-0000-0000-0000-000000000002"),
+                IsFirstTimeViewing = true,
                 Lookup = lookup,
                 UseOrb = false,
                 Steps = new List<GuidedTourStep>()
                 {
                     new GuidedTourStep()
                     {
+                        ID = new Guid("00000000-0000-0000-0000-000000000000"),
                         Title = "Welcome Page",
                         Subtitle = "Limited Trial Tour",
                         Content = "Welcome to the live demo of the Fathym Low-Code Framework. I’m <b>Thinky</b>! I’ll guide you through a few tours to show you some of Fathym’s low-code tools, such as the <b>Data Flow Manager</b> and <b>Data Applications</b>, and I’ll explain how to interact and dig deeper with the tools so you can customize them for your needs."
                     },
                     new GuidedTourStep()
                     {
+                        ID = new Guid("00000000-0000-0000-0000-000000000001"),
                         Title = "Welcome Page Resources",
                         Subtitle = "Limited Trial Tour",
                         Selector = ".mat-tab-body-wrapper",
@@ -194,6 +197,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
                     },
                     new GuidedTourStep()
                     {
+                        ID = new Guid("00000000-0000-0000-0000-000000000002"),
                         Title = "Data Flows",
                         Subtitle = "Limited Trial Tour",
                         Selector = ".ide-side-bar-action:nth-of-type(2)",
@@ -202,6 +206,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
                     },
                     new GuidedTourStep()
                     {
+                        ID = new Guid("00000000-0000-0000-0000-000000000003"),
                         Title = "Data Applications",
                         Subtitle = "Limited Trial Tour",
                         Selector = ".ide-side-bar-action:nth-of-type(3)",
