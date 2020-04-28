@@ -61,6 +61,12 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
 
             State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
         }
+
+        public virtual async Task SetActiveTour(string entApiKey, GuidedTour guidedTour)
+        {
+            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == guidedTour.Lookup);
+        }
+
         #endregion
 
         #region Helpers
@@ -274,7 +280,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
                         ID = new Guid("00000000-0000-0000-0000-000000000034"),
                         Title = "Add New Data App Button",
                         Subtitle = "Data Applications Tour",
-                        Selector = "lcu-limited-trial-data-apps-element .mat-toolbar button:last-of-type",
+                        Selector = "lcu-limited-trial-data-apps-element .mat-toolbar > div > button", // TODO: target an ID instead here
                         Orientation = OrientationTypes.BottomLeft,
                         Content = "Create and configure your own data app or use pre-existing applications. Fathym has several open source data apps to get you started."
                     }
