@@ -21,13 +21,13 @@ using LCU.Personas.Client.Enterprises;
 using LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State;
 
 namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
-{
+{    
     [Serializable]
     [DataContract]
     public class SetActiveTourRequest
-    { 
+    {
         [DataMember]
-        public virtual GuidedTour GuidedTour { get; set; }
+        public virtual string Lookup { get; set; }
     }
 
     public class SetActiveTour
@@ -47,11 +47,11 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
             return await stateBlob.WithStateHarness<GuidedTourState, SetActiveTourRequest, GuidedTourStateHarness>(req, signalRMessages, log,
                 async (harness, reqData, actReq) =>
             {
-                log.LogInformation($"Setting Active Data Flow: {reqData.GuidedTour}");
+                log.LogInformation($"Setting Active Tour to: {reqData.Lookup}");
 
                 var stateDetails = StateUtils.LoadStateDetails(req);
 
-                await harness.SetActiveTour(stateDetails.EnterpriseAPIKey, reqData.GuidedTour);
+                await harness.SetActiveTour(stateDetails.EnterpriseAPIKey, reqData.Lookup);
 
                 return Status.Success;
             });

@@ -62,9 +62,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
             State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
         }
 
-        public virtual async Task SetActiveTour(string entApiKey, GuidedTour guidedTour)
+        public virtual async Task SetActiveTour(string entApiKey, string lookup)
         {
-            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == guidedTour.Lookup);
+            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == lookup);
         }
 
         #endregion
