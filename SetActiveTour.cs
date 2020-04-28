@@ -24,7 +24,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
 {
     [Serializable]
     [DataContract]
-    public class SetActiveTourRequest : BaseRequest
+    public class SetActiveTourRequest
     { 
         [DataMember]
         public virtual GuidedTour GuidedTour { get; set; }
@@ -44,7 +44,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
             [SignalR(HubName = GuidedTourState.HUB_NAME)]IAsyncCollector<SignalRMessage> signalRMessages,
             [Blob("state-api/{headers.lcu-ent-api-key}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
         {
-            return await stateBlob.WithStateHarness<GuidedTourState, RefreshRequest, GuidedTourStateHarness>(req, signalRMessages, log,
+            return await stateBlob.WithStateHarness<GuidedTourState, SetActiveTourRequest, GuidedTourStateHarness>(req, signalRMessages, log,
                 async (harness, reqData, actReq) =>
             {
                 log.LogInformation($"Setting Active Data Flow: {reqData.GuidedTour}");
