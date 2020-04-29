@@ -186,7 +186,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
             return new GuidedTour()
             {
                 ID = new Guid("00000000-0000-0000-0000-000000000002"),
-                IsFirstTimeViewing = false,
+                IsFirstTimeViewing = true,
                 Lookup = lookup,
                 UseOrb = false,
                 Steps = new List<GuidedTourStep>()
