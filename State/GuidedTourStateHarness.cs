@@ -264,7 +264,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
                         Subtitle = "Data Applications Tour",
                         Selector = "lcu-data-apps-config .mat-tab-group .mat-tab-label:nth-of-type(1)",
                         Orientation = OrientationTypes.Left,
-                        Content = "Here you can view the configuration and version history of your application. Fathym leverages NPM Node Packages to organize and deploy any previous or current version of your application to your custom domain.<ul> <li>Application ID</li> <li>NPM package</li> <li>Version number</li> </ul>"
+                        Content = "Here you can view the configuration and version history of your application. Fathym leverages NPM Node Packages to organize and deploy any previous or current version of your application to your custom domain."
                     },
                     new GuidedTourStep()
                     {
@@ -273,7 +273,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State
                         Subtitle = "Data Applications Tour",
                         Selector = "lcu-data-apps-config .mat-tab-group .mat-tab-label:nth-of-type(2)",
                         Orientation = OrientationTypes.Left,
-                        Content = "Here you can view the name, description and path of the application. The path is the URL where your application is hosted.<ul> <li>Application Name</li> <li>Description</li> <li>Path</li> </ul>"
+                        Content = "Here you can view the name, description and path of the application. The path is the URL where your application is hosted."
                     },
                     new GuidedTourStep()
                     {
