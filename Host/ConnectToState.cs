@@ -12,6 +12,8 @@ using LCU.StateAPI;
 using Microsoft.WindowsAzure.Storage.Blob;
 using LCU.StateAPI.Utilities;
 using LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State;
+using LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State;
+using LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State;
 
 namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Host
 {
@@ -24,7 +26,14 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Host
             [SignalR(HubName = GuidedTourState.HUB_NAME)]IAsyncCollector<SignalRGroupAction> signalRGroupActions,
             [Blob("state-api/{headers.lcu-ent-api-key}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
         {
-            return await signalRMessages.ConnectToState<GuidedTourState>(req, log, claimsPrincipal, stateBlob, signalRGroupActions);
+            var stateDetails = StateUtils.LoadStateDetails(req);
+
+            if (stateDetails.StateKey == "tours")
+                return await signalRMessages.ConnectToState<ToursManagementState>(req, log, claimsPrincipal, stateBlob, signalRGroupActions);
+            else if (stateDetails.StateKey == "journeys")
+                return await signalRMessages.ConnectToState<JourneysManagementState>(req, log, claimsPrincipal, stateBlob, signalRGroupActions);
+            else
+                throw new Exception("A valid State Key must be provided (tours, journeys).");
         }
     }
 }
