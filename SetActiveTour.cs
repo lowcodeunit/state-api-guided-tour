@@ -19,6 +19,7 @@ using LCU.StateAPI.Utilities;
 using System.Security.Claims;
 using LCU.Personas.Client.Enterprises;
 using LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State;
+using LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State;
 
 namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
 {    
@@ -44,7 +45,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
             [SignalR(HubName = GuidedTourState.HUB_NAME)]IAsyncCollector<SignalRMessage> signalRMessages,
             [Blob("state-api/{headers.lcu-ent-api-key}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
         {
-            return await stateBlob.WithStateHarness<GuidedTourState, SetActiveTourRequest, GuidedTourStateHarness>(req, signalRMessages, log,
+            return await stateBlob.WithStateHarness<ToursManagementState, SetActiveTourRequest, ToursManagementStateHarness>(req, signalRMessages, log,
                 async (harness, reqData, actReq) =>
             {
                 log.LogInformation($"Setting Active Tour to: {reqData.Lookup}");
