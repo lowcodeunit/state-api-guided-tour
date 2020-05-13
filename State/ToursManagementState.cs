@@ -83,6 +83,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
         public virtual int HighlightPadding { get; set; }
 
         [DataMember]
+        public virtual string Lookup { get; set; }
+
+        [DataMember]
         [JsonConverter(typeof(StringEnumConverter))]
         public virtual OrientationTypes Orientation { get; set; }
 
@@ -110,10 +113,10 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
     public class GuidedTourStepRecord
     {
         [DataMember]
-        public virtual int CurrentStep { get; set; }
+        public virtual string CurrentStep { get; set; }
 
         [DataMember]
-        public virtual List<int> StepHistory { get; set; }
+        public virtual List<string> StepHistory { get; set; }
     }
 
     [Serializable]

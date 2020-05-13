@@ -28,7 +28,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
     public class RecordStepRequest
     {
         [DataMember]
-        public virtual int CurrentStep { get; set; }
+        public virtual string CurrentStep { get; set; }
         
         [DataMember]
         public virtual string TourLookup { get; set; }
