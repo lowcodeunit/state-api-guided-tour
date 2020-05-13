@@ -34,6 +34,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
         public virtual bool Loading { get; set; }
 
         [DataMember]
+        public virtual Dictionary<string, GuidedTourStepRecord> StepRecords { get; set; }
+
+        [DataMember]
         public virtual List<GuidedTour> Tours { get; set; }
 
         [DataMember]
@@ -100,6 +103,17 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
 
         [DataMember]
         public virtual string useHighlightPadding { get; set; }
+    }
+
+    [Serializable]
+    [DataContract]
+    public class GuidedTourStepRecord
+    {
+        [DataMember]
+        public virtual int CurrentStep { get; set; }
+
+        [DataMember]
+        public virtual List<int> StepHistory { get; set; }
     }
 
     [Serializable]
