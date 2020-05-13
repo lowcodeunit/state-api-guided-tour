@@ -66,7 +66,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             else
             {
                 State.StepRecords[tourLookup].CurrentStep = currentStep;
-            
+
                 State.StepRecords[tourLookup].StepHistory.Add(State.StepRecords[tourLookup].CurrentStep);
             }
         }
@@ -77,17 +77,13 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
 
             await SetToursEnabled(idMgr, entApiKey, username);
 
-            SetCurrentTour();
+            if (State.CurrentTour == null && !State.ToursEnabled)
+                State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
         }
 
         public virtual async Task SetActiveTour(string entApiKey, string lookup)
         {
             State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == lookup);
-        }
-
-        public virtual void SetCurrentTour()
-        {
-            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
         }
 
         public virtual async Task SetToursEnabled(IdentityManagerClient idMgr, string entApiKey, string username)
