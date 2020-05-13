@@ -22,6 +22,7 @@ using LCU.Personas.Client.DevOps;
 using LCU.Personas.Enterprises;
 using LCU.Personas.Client.Applications;
 using Fathym.API;
+using LCU.Personas.Client.Identity;
 
 namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
 {
@@ -55,11 +56,13 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             State.Tours.Add(createDataFlowToolTour("data-flow-tool-tour"));
         }
 
-        public virtual void RefreshTours()
+        public virtual async Task RefreshTours(IdentityManagerClient idMgr, string entApiKey, string username)
         {
             LoadGuidedTours();
 
-            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
+            await SetToursEnabled(idMgr, entApiKey, username);
+
+            SetCurrentTour();
         }
 
         public virtual async Task SetActiveTour(string entApiKey, string lookup)
@@ -67,6 +70,17 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == lookup);
         }
 
+        public virtual void SetCurrentTour()
+        {
+            State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
+        }
+
+        public virtual async Task SetToursEnabled(IdentityManagerClient idMgr, string entApiKey, string username)
+        {
+            var authResp = await idMgr.HasAccess(entApiKey, username, new List<string>() { "LCU.NapkinIDE.AllAccess" });
+
+            State.ToursEnabled = !authResp.Status;
+        }
         #endregion
 
         #region Helpers
@@ -96,7 +110,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                 }
             };
         }
-        
+
         protected virtual GuidedTour createDemoTour(string lookup)
         {
             return new GuidedTour()

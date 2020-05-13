@@ -21,8 +21,9 @@ using LCU.Personas.Client.Enterprises;
 using LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State;
 using LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State;
 using LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State;
+using LCU.Personas.Client.Identity;
 
-namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
+namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Host
 {
     [Serializable]
     [DataContract]
@@ -33,9 +34,13 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
     {
         protected EnterpriseManagerClient entMgr;
 
-        public Refresh(EnterpriseManagerClient entMgr)
+        protected IdentityManagerClient idMgr;
+
+        public Refresh(EnterpriseManagerClient entMgr, IdentityManagerClient idMgr)
         {
             this.entMgr = entMgr;
+            
+            this.idMgr = idMgr;
         }
 
         #region API Methods
@@ -70,7 +75,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
         #region Helpers
         protected virtual async Task<Status> refreshTours(ToursManagementStateHarness harness, ILogger log, StateDetails stateDetails)
         {
-            harness.RefreshTours();
+            await harness.RefreshTours(idMgr, stateDetails.EnterpriseAPIKey, stateDetails.Username);
 
             return Status.Success;
         }

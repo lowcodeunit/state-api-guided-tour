@@ -21,7 +21,7 @@ using LCU.Personas.Client.Enterprises;
 using LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State;
 using LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State;
 
-namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour
+namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
 {    
     [Serializable]
     [DataContract]

@@ -25,6 +25,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
     public class ToursManagementState
     {
         [DataMember]
+        public virtual List<string> CompletedTourLookups { get; set; }
+
+        [DataMember]
         public virtual GuidedTour CurrentTour { get; set; }
 
         [DataMember]
@@ -32,6 +35,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
 
         [DataMember]
         public virtual List<GuidedTour> Tours { get; set; }
+
+        [DataMember]
+        public virtual bool ToursEnabled { get; set; }
     }
 
     [Serializable]
