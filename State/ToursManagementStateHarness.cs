@@ -87,6 +87,13 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             }
         }
 
+        public virtual async Task Reset(IdentityManagerClient idMgr, string entApiKey, string username)
+        {
+            State = new ToursManagementState();
+
+            await RefreshTours(idMgr, entApiKey, username);
+        }
+
         public virtual async Task RefreshTours(IdentityManagerClient idMgr, string entApiKey, string username)
         {
             LoadGuidedTours();
