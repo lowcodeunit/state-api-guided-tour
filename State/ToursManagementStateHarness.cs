@@ -347,7 +347,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         ID = new Guid("00000000-0000-0000-0000-000000000034"),
                         Title = "Add New Data App Button",
                         Subtitle = "Data Applications Tour",
-                        Selector = "lcu-limited-trial-data-apps-element .mat-toolbar > div > button", // TODO: target an ID instead here
+                        Selector = "lcu-limited-trial-data-apps-element #createNewDataAppBtn",
                         Orientation = OrientationTypes.Left,
                         Lookup = "create",
                         Content = "Create and configure your own data app or use pre-existing applications. Fathym has several open source data apps to get you started."
