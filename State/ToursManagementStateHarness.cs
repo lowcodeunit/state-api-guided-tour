@@ -263,7 +263,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         ID = new Guid("00000000-0000-0000-0000-000000000021"),
                         Title = "Welcome Page Resources",
                         Subtitle = "Limited Trial Tour",
-                        Selector = "lcu-limited-trial-welcome-element > .mat-card",
+                        Selector = "lcu-limited-trial-welcome-element > .welcome-container",
                         Orientation = OrientationTypes.Left,
                         Lookup = "journeys",
                         Content = "Here are a number of resources and guided tours you can select that will educate you of the different developer journeys you can undertake through Fathym."
