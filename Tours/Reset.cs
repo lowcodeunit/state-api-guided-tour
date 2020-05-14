@@ -49,7 +49,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
 
                 var stateDetails = StateUtils.LoadStateDetails(req);
 
-                harness.Reset(idMgr, stateDetails.EnterpriseAPIKey, stateDetails.Username);
+                await harness.Reset(idMgr, stateDetails.EnterpriseAPIKey, stateDetails.Username);
 
                 return Status.Success;
             });
