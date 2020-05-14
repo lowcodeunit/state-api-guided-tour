@@ -31,6 +31,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
         public virtual string CurrentStep { get; set; }
         
         [DataMember]
+        public virtual bool IsComplete { get; set; }
+        
+        [DataMember]
         public virtual string TourLookup { get; set; }
     }
 
@@ -51,7 +54,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
 
                 var stateDetails = StateUtils.LoadStateDetails(req);
 
-                harness.RecordStep(reqData.TourLookup, reqData.CurrentStep);
+                harness.RecordStep(reqData.TourLookup, reqData.CurrentStep, reqData.IsComplete);
 
                 return Status.Success;
             });

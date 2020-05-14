@@ -56,7 +56,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             State.Tours.Add(createDataFlowToolTour("data-flow-tool-tour"));
         }
 
-        public virtual void RecordStep(string tourLookup, string currentStep)
+        public virtual void RecordStep(string tourLookup, string currentStep, bool isComplete)
         {
             if (State.StepRecords.IsNullOrEmpty())
                 State.StepRecords = new Dictionary<string, GuidedTourStepRecord>();
@@ -67,6 +67,24 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             State.StepRecords[tourLookup].CurrentStep = currentStep;
 
             State.StepRecords[tourLookup].StepHistory.Add(State.StepRecords[tourLookup].CurrentStep);
+
+            if (isComplete)
+            {
+                if (State.CompletedTourLookups.IsNullOrEmpty())
+                    State.CompletedTourLookups = new Dictionary<string, string>();
+
+                if (State.StepRecordHistory.IsNullOrEmpty())
+                    State.StepRecordHistory = new Dictionary<string, List<GuidedTourStepRecord>>();
+
+                if (!State.StepRecordHistory.ContainsKey(tourLookup))
+                    State.StepRecordHistory[tourLookup] = new List<GuidedTourStepRecord>();
+
+                State.CompletedTourLookups[tourLookup] = currentStep;
+
+                State.StepRecordHistory[tourLookup].Add(State.StepRecords[tourLookup]);
+
+                State.StepRecords[tourLookup] = new GuidedTourStepRecord() { StepHistory = new List<string>() };
+            }
         }
 
         public virtual async Task RefreshTours(IdentityManagerClient idMgr, string entApiKey, string username)

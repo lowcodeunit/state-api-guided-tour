@@ -25,13 +25,16 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
     public class ToursManagementState
     {
         [DataMember]
-        public virtual List<string> CompletedTourLookups { get; set; }
+        public virtual Dictionary<string, string> CompletedTourLookups { get; set; }
 
         [DataMember]
         public virtual GuidedTour CurrentTour { get; set; }
 
         [DataMember]
         public virtual bool Loading { get; set; }
+
+        [DataMember]
+        public virtual Dictionary<string, List<GuidedTourStepRecord>> StepRecordHistory { get; set; }
 
         [DataMember]
         public virtual Dictionary<string, GuidedTourStepRecord> StepRecords { get; set; }
