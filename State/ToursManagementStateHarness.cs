@@ -83,7 +83,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
 
                 State.StepRecordHistory[tourLookup].Add(State.StepRecords[tourLookup]);
 
-                State.StepRecords[tourLookup] = new GuidedTourStepRecord() { StepHistory = new List<string>() };
+                State.StepRecords.Remove(tourLookup);
             }
         }
 
