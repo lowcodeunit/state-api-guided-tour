@@ -54,6 +54,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             State.Tours.Add(createDataFlowManagementTour("data-flow-management-tour"));
 
             State.Tours.Add(createDataFlowToolTour("data-flow-tool-tour"));
+
+            State.Tours.Add(createIoTDeveloperJourneyTour("iot-developer-journey-tour"));
         }
 
         public virtual void RecordStep(string tourLookup, string currentStep, bool isComplete)
@@ -479,6 +481,78 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Orientation = OrientationTypes.Top,
                         Lookup = "warm-query",
                         Content = "Depending on the dashboard and reporting tools you’re using, you may not be able to connect directly to the warm storage. If that’s the case, the <b>warm query</b> provides an API endpoint that you can use to get access to the data in warm storage."
+                    }
+                }
+            };
+        }
+
+        protected virtual GuidedTour createIoTDeveloperJourneyTour(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-000000000006"),
+                IsFirstTimeViewing = true,
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000060"),
+                        Title = "IoT Developer Journey",
+                        Subtitle = "To the Edge and Beyond",
+                        Lookup = "iot-journey",
+                        Content = "In 6 steps, I’ll guide you how on IoT developers can use the Fathym Low-Code Framework to rapidly provision end-to-end IoT infrastructure and build enterprise scale IoT solutions."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000061"),
+                        Title = "Data Flow Manager",
+                        Subtitle = "To the Edge and Beyond",
+                        Selector = "lcu-limited-trial-data-flow-element .data-flow-manager-container",
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "data-flow",
+                        Content = "The data flow manager is a powerful drag and drop interface for easily configuring and provisioning end-to-end IoT infrastructure."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000062"),
+                        Title = "Emulated IoT Data Flow",
+                        Subtitle = "To the Edge and Beyond",
+                        Selector = "lcu-limited-trial-data-flow-element .data-flow-ide-container",
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "emulated",
+                        Content = "Here is an emulated data flow that demonstrates one of our best practice IoT environments. Using our drag and drop interface, you can create emulated data functions and connect them to data streams and data maps. The data map allows you to manipulate and analyze your data before pushing to various configured storage outputs."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000063"),
+                        Title = "Data Applications",
+                        Subtitle = "To the Edge and Beyond",
+                        Selector = "lcu-limited-trial-data-apps-element .lcu-data-apps-config-manager",
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "data-apps",
+                        Content = "Data applications enable you to build and deliver powerful data-driven web applications and sites that are easily managed for multiple end users."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000064"),
+                        Title = "Hosting your Application",
+                        Subtitle = "To the Edge and Beyond",
+                        Selector = "lcu-data-apps-config .mat-card", // TODO: Add ID to mat-card
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "hosting",
+                        Content = "You can host and build data apps that integrate automatically with NPM packages and GitHub repositories, enabling you to organize and deploy any previous or current version of your application to your custom domain."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000065"),
+                        Title = "Access Control",
+                        Subtitle = "To the Edge and Beyond",
+                        Selector = "lcu-data-apps-config .mat-card .mat-tab-group",
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "access",
+                        Content = "Set your application to private if you want to control access for internal use or set to public if you want to share it with external users without a login. You can update visibility settings at any point."
                     }
                 }
             };
