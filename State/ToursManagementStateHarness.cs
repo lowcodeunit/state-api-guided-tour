@@ -539,7 +539,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         ID = new Guid("00000000-0000-0000-0000-000000000064"),
                         Title = "Hosting your Application",
                         Subtitle = "To the Edge and Beyond",
-                        Selector = "lcu-data-apps-config .mat-card", // TODO: Add ID to mat-card
+                        Selector = "lcu-data-apps-config #dataAppsConfigCard",
                         Orientation = OrientationTypes.Left,
                         Lookup = "hosting",
                         Content = "You can host and build data apps that integrate automatically with NPM packages and GitHub repositories, enabling you to organize and deploy any previous or current version of your application to your custom domain."
@@ -549,8 +549,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         ID = new Guid("00000000-0000-0000-0000-000000000065"),
                         Title = "Access Control",
                         Subtitle = "To the Edge and Beyond",
-                        Selector = "lcu-data-apps-config .mat-card .mat-tab-group",
-                        Orientation = OrientationTypes.Left,
+                        Selector = "lcu-data-apps-config #accessControlToggle",
+                        Orientation = OrientationTypes.Top,
                         Lookup = "access",
                         Content = "Set your application to private if you want to control access for internal use or set to public if you want to share it with external users without a login. You can update visibility settings at any point."
                     }
