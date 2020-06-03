@@ -176,24 +176,6 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     },
                     new GuidedTourStep()
                     {
-                        Title = "First Paragraph",
-                        Subtitle = "Guided Tour",
-                        Selector = "p",
-                        Orientation = OrientationTypes.BottomRight,
-                        Lookup = "first",
-                        Content = "Here, we are selecting the first paragraph element on the screen with <b>p</b>."
-                    },
-                    new GuidedTourStep()
-                    {
-                        Title = "Second Paragraph",
-                        Subtitle = "Guided Tour",
-                        Selector = "#p2",
-                        Orientation = OrientationTypes.Top,
-                        Lookup = "second",
-                        Content = "Now we are selecting the second paragraph, that has an id of <b>#p2</b>, in which we are targeting."
-                    },
-                    new GuidedTourStep()
-                    {
                         Title = "Complex Selectors",
                         Subtitle = "Guided Tour",
                         Selector = ".section:nth-of-type(2) .mat-radio-button:nth-child(3)",
@@ -234,9 +216,17 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Guided Tour",
                         Selector = "#boxLogoForm",
                         Orientation = OrientationTypes.BottomLeft,
-                        ActionDelay = 500,
                         Lookup = "see",
                         Content = "As you can see, this tab was selected so that the Tour could continue after the DOM has rendered a different view.  You can also use the <b>actionDelay</b> property to specify a time delay before showing the next step, in order to properly render the next view."
+                    },
+                    new GuidedTourStep()
+                    {
+                        Title = "Tour Complete",
+                        Subtitle = "Guided Tour",
+                        Selector = "#boxMiscForm",
+                        Orientation = OrientationTypes.BottomLeft,
+                        Lookup = "complete",
+                        Content = "Congratulations! You have successfully completed a Tour. You can click the 'Finish' button to complete the tour, or you can click the 'Back' button to go back and view any previous steps you want to review again."
                     }
                 }
             };
