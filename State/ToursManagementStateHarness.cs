@@ -224,7 +224,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Title = "Tour Complete",
                         Subtitle = "Guided Tour",
                         Selector = "#boxMiscForm",
-                        Orientation = OrientationTypes.BottomLeft,
+                        Orientation = OrientationTypes.Right,
                         Lookup = "complete",
                         Content = "Congratulations! You have successfully completed a Tour. You can click the 'Finish' button to complete the tour, or you can click the 'Back' button to go back and view any previous steps you want to review again."
                     }
@@ -248,7 +248,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Title = "Welcome",
                         Subtitle = "Limited Trial Tour",
                         Lookup = "welcome",
-                        Content = "Welcome to the live demo of the Fathym Low-Code Framework. I’m <b>Thinky</b>! I’ll guide you through a few tours to show you some of Fathym’s low-code tools, such as the <b>Data Flow Manager</b> and <b>Data Applications</b>, and I’ll explain how to interact and dig deeper with the tools so you can customize them for your needs."
+                        Content = "Welcome to the live demo of the Fathym Low-Code Framework. I’m Thinky! I’ll guide you through a few tours to show you some of Fathym’s low-code tools, such as the Data Flow Manager and Data Applications, and I’ll explain how to interact and dig deeper with the tools so you can customize them for your needs."
                     },
                     new GuidedTourStep()
                     {
@@ -268,7 +268,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "nide-ide-side-bar .ide-side-bar-action:nth-of-type(2)",
                         Orientation = OrientationTypes.Right,
                         Lookup = "data-flow",
-                        Content = "The <b>Data Flow Manager</b> is a powerful drag and drop interface for easily configuring and provisioning end-to-end cloud infrastructure. Navigate here to explore further."
+                        Content = "The Data Flow Manager is a powerful drag and drop interface for easily configuring and provisioning end-to-end cloud infrastructure. Navigate here to explore further."
                     },
                     new GuidedTourStep()
                     {
@@ -278,7 +278,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "nide-ide-side-bar .ide-side-bar-action:nth-of-type(3)",
                         Orientation = OrientationTypes.Right,
                         Lookup = "data-apps",
-                        Content = "<b>Data applications</b> are quick and easy ways to build and deliver enterprise scalable experiences to your users. Create your own, configure your own, or use pre-existing applications."
+                        Content = "In Data Applications you can host, manage and deploy data apps that integrate automatically with NPM packages and GitHub repositories. Navigate here to explore further."
                     }
                 }
             };
@@ -302,7 +302,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-apps-element .lcu-data-apps-config-manager",
                         Orientation = OrientationTypes.Left,
                         Lookup = "welcome",
-                        Content = "<b>Data Applications</b> are quick and easy ways to build and deliver scalable web apps and sites, easily managed for multiple end users."
+                        Content = "Data applications are quick and easy ways to host, manage and deploy scalable web apps and sites, easily managed for multiple end users."
                     },
                     new GuidedTourStep()
                     {
@@ -312,7 +312,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-apps-element .mat-drawer-inner-container",
                         Orientation = OrientationTypes.Left,
                         Lookup = "apps",
-                        Content = "Access your applications here. The examples provided are Freeboard and Fathym Forecaster applications. Applications can be hosted as either public or private. Set your application to private if you want to control access for internal use or set to public if you want to share it with users without a login. You can update visibility settings at any point."
+                        Content = "Access your applications here. The examples provided are Hello World, Fathym Forecast and Trial Dashboard. Applications can be hosted as either public or private. Set your application to private if you want to control access for internal use or set to public if you want to share it with external users without a login. You can update visibility settings at any point."
                     },
                     new GuidedTourStep()
                     {
@@ -322,7 +322,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-apps-element lcu-data-apps-config .mat-tab-group .mat-tab-label:nth-of-type(1)",
                         Orientation = OrientationTypes.Left,
                         Lookup = "view-config",
-                        Content = "Here you can view the configuration and version history of your application. Fathym leverages NPM Node Packages to organize and deploy any previous or current version of your application to your custom domain."
+                        Content = "Here you can view the configuration and version history of your application. Fathym leverages NPM node packages to organize and deploy any previous or current version of your application to your custom domain."
                     },
                     new GuidedTourStep()
                     {
@@ -337,7 +337,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     new GuidedTourStep()
                     {
                         ID = new Guid("00000000-0000-0000-0000-000000000034"),
-                        Title = "Add New Data App Button",
+                        Title = "Add New Data App",
                         Subtitle = "Data Applications Tour",
                         Selector = "lcu-limited-trial-data-apps-element #createNewDataAppBtn",
                         Orientation = OrientationTypes.Left,
@@ -410,7 +410,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='e7457c9c-c9b2-4955-b0a2-330b6244982d']", // selects by attribute selector
                         Orientation = OrientationTypes.Top,
                         Lookup = "emulator",
-                        Content = "The <b>emulator</b> is where you can configure your test device data and the frequency that it posts to the ingest. This is ideal for getting data streaming through your IoT infrastructure and into business applications and dashboards, while your hardware team is working to get the actual devices online. Once the real devices are online you can turn off the emulator."
+                        Content = "The emulator is where you can configure your test device data and the frequency that it posts to the ingest. This is ideal for getting data streaming through your IoT infrastructure and into business applications and dashboards, while your hardware team is working to get the actual devices online. Once the real devices are online you can turn off the emulator."
                     },
                     new GuidedTourStep()
                     {
@@ -420,7 +420,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='f0e0b225-5e51-44c2-8618-a48a0d7678de']",
                         Orientation = OrientationTypes.Top,
                         Lookup = "ingest",
-                        Content = "The <b>ingest</b> is a security-enhanced communication channel for sending and receiving data from your devices or an emulator."
+                        Content = "The ingest is a security-enhanced communication channel for sending and receiving data from your devices or an emulator."
                     },
                     new GuidedTourStep()
                     {
@@ -430,7 +430,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='2bb21cb0-37db-4e6e-a762-ab5b1ea3c974']",
                         Orientation = OrientationTypes.Top,
                         Lookup = "data-map",
-                        Content = "The <b>data map</b> is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
+                        Content = "The data map is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
                     },
                     new GuidedTourStep()
                     {
@@ -440,7 +440,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='8a3fe2f2-d7a3-43f5-b8c7-cf87c6691422']",
                         Orientation = OrientationTypes.Top,
                         Lookup = "cold-storage",
-                        Content = "This storage option costs less than $1/month. You can send raw, untouched JSON messages from a device to <b>cold storage</b>. This allows you to refer to cold storage for debugging when you need to see the exact messages that were sent from a device."
+                        Content = "This storage option costs less than $1/month. You can send raw, untouched JSON messages from a device to cold storage. This allows you to refer to cold storage for debugging when you need to see the exact messages that were sent from a device."
                     },
                     new GuidedTourStep()
                     {
@@ -450,7 +450,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='038131c4-57a9-443c-90ff-d683816c2c40']",
                         Orientation = OrientationTypes.Left,
                         Lookup = "warm-storage",
-                        Content = "This storage option is more expensive, starting at $25/month. <b>Warm storage</b> is a database, like CosmosDB or SQL Server. It's queryable storage that is ideal for connecting to reporting solutions like Power BI. Fathym helps you convert units (like Celsius to Fahrenheit) before storing in warm storage so the data is ready for downstream use."
+                        Content = "This storage option is more expensive, starting at $25/month. Warm storage is a database, like CosmosDB or SQL Server. It's queryable storage that is ideal for connecting to reporting solutions like Power BI. Fathym helps you convert units (like Celsius to Fahrenheit) before storing in warm storage so the data is ready for downstream use."
                     },
                     new GuidedTourStep()
                     {
@@ -460,7 +460,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='0392f943-577e-4165-acb8-93c70074c04f']",
                         Orientation = OrientationTypes.Left,
                         Lookup = "hot-storage",
-                        Content = "This storage option is also inexpensive, normally less than $1/month. <b>Hot storage</b> is PubSub – Publisher/Subscriber relationships. A publisher application creates and sends messages to a topic. Subscriber applications create a subscription to a topic to receive messages from it. Fathym uses hot storage for real-time sensor dashboards."
+                        Content = "This storage option is also inexpensive, normally less than $1/month. Hot storage is PubSub – Publisher/Subscriber relationships. A publisher application creates and sends messages to a topic. Subscriber applications create a subscription to a topic to receive messages from it. Fathym uses hot storage for real-time sensor dashboards."
                     },
                     new GuidedTourStep()
                     {
@@ -470,7 +470,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='3ccb861c-57f6-44a0-9430-13c68fb19055']",
                         Orientation = OrientationTypes.Top,
                         Lookup = "warm-query",
-                        Content = "Depending on the dashboard and reporting tools you’re using, you may not be able to connect directly to the warm storage. If that’s the case, the <b>warm query</b> provides an API endpoint that you can use to get access to the data in warm storage."
+                        Content = "Depending on the dashboard and reporting tools you’re using, you may not be able to connect directly to the warm storage. If that’s the case, the warm query provides an API endpoint that you can use to get access to the data in warm storage."
                     }
                 }
             };
