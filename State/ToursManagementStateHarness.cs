@@ -54,8 +54,16 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             State.Tours.Add(createDataFlowManagementTour("data-flow-management-tour"));
 
             State.Tours.Add(createDataFlowToolTour("data-flow-tool-tour"));
-
+            
             State.Tours.Add(createIoTDeveloperJourneyTour("iot-developer-journey-tour"));
+
+            State.Tours.Add(createProWelcomeTour("pro-welcome-tour"));
+            
+            State.Tours.Add(createProDataApplicationsTour("pro-data-applications-tour"));
+            
+            State.Tours.Add(createProDataFlowTour("pro-data-flow-tour"));
+            
+            State.Tours.Add(createProSettingsTour("pro-settings-tour"));
         }
 
         public virtual void RecordStep(string tourLookup, string currentStep, bool isComplete)
@@ -543,6 +551,251 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Orientation = OrientationTypes.Top,
                         Lookup = "access",
                         Content = "Set your application to private if you want to control access for internal use or set to public if you want to share it with external users without a login. You can update visibility settings at any point."
+                    }
+                }
+            };
+        }
+
+        protected virtual GuidedTour createProWelcomeTour(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-000000000007"),
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000070"),
+                        Title = "Welcome",
+                        Subtitle = "Welcome Tour",
+                        Lookup = "welcome",
+                        Content = "Welcome to the Fathym Low-Code Framework. I’m Thinky! I’ll guide you through a few tours to show you some of Fathym’s low-code tools and I'll explain how to interact with the tools and dig deeper so you can customize them for your needs."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000071"),
+                        Title = "Low-Code Unit™",
+                        Subtitle = "Welcome Tour",
+                        Lookup = "low-code-unit",
+                        Content = "Each element of the Fathym Low-Code Framework is made up of Low-Code Units – modular and reusable building blocks of code that can be as large as an application, or as small as a data visualization. You can modify our data flow and data application Low-Code Units or create and upload your own."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000072"),
+                        Title = "Core",
+                        Subtitle = "Welcome Tour",
+                        Lookup = "core",
+                        Selector = "#coreActivityLink",
+                        Content = "In Core you can host, manage and deploy data applications."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000073"),
+                        Title = "Data Flows",
+                        Subtitle = "Welcome Tour",
+                        Lookup = "data-flows",
+                        Selector = "#dataFlowActivityLink",
+                        Content = "The data flow manager is a powerful drag and drop interface for easily configuring and provisioning end-to-end cloud infrastructure."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000074"),
+                        Title = "Settings",
+                        Subtitle = "Welcome Tour",
+                        Lookup = "settings",
+                        Selector = "#settingsLink",
+                        Content = "In settings you can customize the IDE to suit your needs. Modify or upload Low-Code Units and configure your IDE activity bar and side bar."
+                    }
+                }
+            };
+        }
+
+        protected virtual GuidedTour createProDataApplicationsTour(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-000000000008"),
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000080"),
+                        Title = "Data Applications",
+                        Subtitle = "Data Applications Tour",
+                        Lookup = "data-apps",
+                        Content = "Data applications are quick and easy ways to host, manage and deploy scalable web apps and sites, easily managed for multiple end users."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000081"),
+                        Title = "NPM node packages",
+                        Subtitle = "Data Applications Tour",
+                        Lookup = "npm-packages",
+                        Content = "Fathym leverages NPM node packages to organize and deploy any previous or current version of your application to your custom domain."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000082"),
+                        Title = "Secure Application",
+                        Subtitle = "Data Applications Tour",
+                        Lookup = "secure",
+                        Selector = "#isSecuredAppSlideToggle",
+                        Content = "The default setting of an application is public, but you can easily secure your application and control access rights."
+                    }
+                }
+            };
+        }
+
+        protected virtual GuidedTour createProDataFlowTour(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-000000000009"),
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000090"),
+                        Title = "No-Code Data Flow",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "no-code-data-flow",
+                        Content = "Use our drag and drop interface to easily configure the following Azure resources."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000091"),
+                        Title = "Data Emulator",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "data-emulator",
+                        Selector = "#dataEmulatorModuleOption",
+                        Content = "The emulator is where you can configure your test device data and the frequency that it posts to the ingest. This is ideal for getting data streaming through your IoT infrastructure and into business applications and dashboards, while your hardware team is working to get the actual devices online. Once the real devices are online you can turn off the emulator."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000092"),
+                        Title = "Device Stream",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "device-stream",
+                        Selector = "#deviceStreamModuleOption",
+                        Content = "The device stream is a security-enhanced communication channel for sending and receiving sensor data from your real devices."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000093"),
+                        Title = "Data Map",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "data-map",
+                        Selector = "#dataMapModuleOption",
+                        Content = "The data map is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000094"),
+                        Title = "Cold Storage",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "cold-storage",
+                        Selector = "#coldStorageModuleOption",
+                        Content = "This storage option costs less than $1/month. We recommend sending raw, untouched JSON messages from a device to cold storage. This allows you to refer to cold storage for debugging when you need to see the exact messages that were sent from a device."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000095"),
+                        Title = "Warm Storage",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "warm-storage",
+                        Selector = "#warmStorageModuleOption",
+                        Content = "This storage option is more expensive, starting at $25/month. Warm storage is a database, like CosmosDB or SQL Server. It's queryable storage that is ideal for connecting to reporting solutions like Power BI. Use the data map to convert units (like Celsius to Fahrenheit) before storing in warm storage so the data is ready for downstream use."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000096"),
+                        Title = "Hot Storage",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "hot-storage",
+                        Selector = "#hotStorageModuleOption",
+                        Content = "This storage option is also inexpensive, normally less than $1/month. We recommend hot storage for real-time device dashboards."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000097"),
+                        Title = "Warm Query",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "warm-query",
+                        Selector = "#warmQueryModuleOption",
+                        Content = "Depending on the dashboard and reporting tools you’re using; you may not be able to connect directly to the warm storage. If that’s the case, the warm query provides an API endpoint that you can use to get access to your data."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000098"),
+                        Title = "Save",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "save",
+                        Selector = "#dataFlowIdeSaveBtn",
+                        Content = "As you create your data flow, be sure to regularly save your configuration."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000099"),
+                        Title = "Deploy",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "deploy",
+                        Selector = "#dataFlowIdeDeployBtn",
+                        Content = "Once your data flow is complete, simply click here to deploy the configured resources in your Azure portal."
+                    }
+                }
+            };
+        }
+
+        protected virtual GuidedTour createProSettingsTour(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-000000000010"),
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000100"),
+                        Title = "Architecture",
+                        Subtitle = "IDE Settings Tour",
+                        Lookup = "architecture",
+                        Selector = "#settingsArchitectureNavLink",
+                        Content = "Add, edit, delete your organization's Low-Code Unit NPM packages."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000101"),
+                        Title = "Configuration",
+                        Subtitle = "IDE Settings Tour",
+                        Lookup = "configuration",
+                        Selector = "#settingsConfigurationNavLink",
+                        Content = "Manage which elements of your Low Code Units appear in your IDE."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000102"),
+                        Title = "Setup",
+                        Subtitle = "IDE Settings Tour",
+                        Lookup = "setup",
+                        Selector = "#settingsSetupNavLink",
+                        Content = "Modify the layout of your IDE’s activity bar and side bar."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000103"),
+                        Title = "Marketplace",
+                        Subtitle = "IDE Settings Tour",
+                        Lookup = "marketplace",
+                        Selector = "#settingsMarketplaceNavLink",
+                        Content = "Our Low-Code Unit™ marketplace is coming soon."
                     }
                 }
             };
