@@ -588,6 +588,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Welcome Tour",
                         Lookup = "core",
                         Selector = "#coreActivityLink",
+                        Orientation = OrientationTypes.Right,
                         Content = "In Core you can host, manage and deploy data applications."
                     },
                     new GuidedTourStep()
@@ -597,6 +598,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Welcome Tour",
                         Lookup = "data-flows",
                         Selector = "#dataFlowActivityLink",
+                        Orientation = OrientationTypes.Right,
                         Content = "The data flow manager is a powerful drag and drop interface for easily configuring and provisioning end-to-end cloud infrastructure."
                     },
                     new GuidedTourStep()
@@ -606,6 +608,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Welcome Tour",
                         Lookup = "settings",
                         Selector = "#settingsLink",
+                        Orientation = OrientationTypes.Right,
                         Content = "In settings you can customize the IDE to suit your needs. Modify or upload Low-Code Units and configure your IDE activity bar and side bar."
                     }
                 }
@@ -644,6 +647,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Applications Tour",
                         Lookup = "secure",
                         Selector = "#isSecuredAppSlideToggle",
+                        Orientation = OrientationTypes.Top,
                         Content = "The default setting of an application is public, but you can easily secure your application and control access rights."
                     }
                 }
@@ -674,6 +678,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "data-emulator",
                         Selector = "#dataEmulatorModuleOption",
+                        Orientation = OrientationTypes.Left,
                         Content = "The emulator is where you can configure your test device data and the frequency that it posts to the ingest. This is ideal for getting data streaming through your IoT infrastructure and into business applications and dashboards, while your hardware team is working to get the actual devices online. Once the real devices are online you can turn off the emulator."
                     },
                     new GuidedTourStep()
@@ -683,6 +688,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "device-stream",
                         Selector = "#deviceStreamModuleOption",
+                        Orientation = OrientationTypes.Left,
                         Content = "The device stream is a security-enhanced communication channel for sending and receiving sensor data from your real devices."
                     },
                     new GuidedTourStep()
@@ -692,6 +698,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "data-map",
                         Selector = "#dataMapModuleOption",
+                        Orientation = OrientationTypes.Left,
                         Content = "The data map is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
                     },
                     new GuidedTourStep()
@@ -701,6 +708,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "cold-storage",
                         Selector = "#coldStorageModuleOption",
+                        Orientation = OrientationTypes.Left,
                         Content = "This storage option costs less than $1/month. We recommend sending raw, untouched JSON messages from a device to cold storage. This allows you to refer to cold storage for debugging when you need to see the exact messages that were sent from a device."
                     },
                     new GuidedTourStep()
@@ -710,6 +718,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "warm-storage",
                         Selector = "#warmStorageModuleOption",
+                        Orientation = OrientationTypes.Left,
                         Content = "This storage option is more expensive, starting at $25/month. Warm storage is a database, like CosmosDB or SQL Server. It's queryable storage that is ideal for connecting to reporting solutions like Power BI. Use the data map to convert units (like Celsius to Fahrenheit) before storing in warm storage so the data is ready for downstream use."
                     },
                     new GuidedTourStep()
@@ -719,6 +728,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "hot-storage",
                         Selector = "#hotStorageModuleOption",
+                        Orientation = OrientationTypes.Left,
                         Content = "This storage option is also inexpensive, normally less than $1/month. We recommend hot storage for real-time device dashboards."
                     },
                     new GuidedTourStep()
@@ -728,6 +738,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "warm-query",
                         Selector = "#warmQueryModuleOption",
+                        Orientation = OrientationTypes.Left,
                         Content = "Depending on the dashboard and reporting tools you’re using; you may not be able to connect directly to the warm storage. If that’s the case, the warm query provides an API endpoint that you can use to get access to your data."
                     },
                     new GuidedTourStep()
@@ -737,6 +748,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "save",
                         Selector = "#dataFlowIdeSaveBtn",
+                        Orientation = OrientationTypes.Bottom,
                         Content = "As you create your data flow, be sure to regularly save your configuration."
                     },
                     new GuidedTourStep()
@@ -746,6 +758,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "deploy",
                         Selector = "#dataFlowIdeDeployBtn",
+                        Orientation = OrientationTypes.Bottom,
                         Content = "Once your data flow is complete, simply click here to deploy the configured resources in your Azure portal."
                     }
                 }
@@ -768,6 +781,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "IDE Settings Tour",
                         Lookup = "architecture",
                         Selector = "#settingsArchitectureNavLink",
+                        Orientation = OrientationTypes.Right,
                         Content = "Add, edit, delete your organization's Low-Code Unit NPM packages."
                     },
                     new GuidedTourStep()
@@ -777,6 +791,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "IDE Settings Tour",
                         Lookup = "configuration",
                         Selector = "#settingsConfigurationNavLink",
+                        Orientation = OrientationTypes.Right,
                         Content = "Manage which elements of your Low Code Units appear in your IDE."
                     },
                     new GuidedTourStep()
@@ -786,6 +801,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "IDE Settings Tour",
                         Lookup = "setup",
                         Selector = "#settingsSetupNavLink",
+                        Orientation = OrientationTypes.Right,
                         Content = "Modify the layout of your IDE’s activity bar and side bar."
                     },
                     new GuidedTourStep()
@@ -795,6 +811,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "IDE Settings Tour",
                         Lookup = "marketplace",
                         Selector = "#settingsMarketplaceNavLink",
+                        Orientation = OrientationTypes.Right,
                         Content = "Our Low-Code Unit™ marketplace is coming soon."
                     }
                 }
