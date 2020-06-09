@@ -608,7 +608,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Welcome Tour",
                         Lookup = "settings",
                         Selector = "#settingsLink",
-                        Orientation = OrientationTypes.Right,
+                        Orientation = OrientationTypes.TopRight,
                         Content = "In settings you can customize the IDE to suit your needs. Modify or upload Low-Code Units and configure your IDE activity bar and side bar."
                     }
                 }
@@ -684,26 +684,36 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     new GuidedTourStep()
                     {
                         ID = new Guid("00000000-0000-0000-0000-000000000092"),
+                        Title = "Data Stream",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "data-stream",
+                        Selector = "#dataStreamModuleOption",
+                        Orientation = OrientationTypes.Left,
+                        Content = "The data stream is designed for large scale data ingestion, from either an IoT enabled device or from an application. A Data Stream is only one-way communication; it can’t talk back to the device that is sending the information."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000093"),
                         Title = "Device Stream",
                         Subtitle = "Data Flow Tour",
                         Lookup = "device-stream",
                         Selector = "#deviceStreamModuleOption",
                         Orientation = OrientationTypes.Left,
-                        Content = "The device stream is a security-enhanced communication channel for sending and receiving sensor data from your real devices."
-                    },
-                    new GuidedTourStep()
-                    {
-                        ID = new Guid("00000000-0000-0000-0000-000000000093"),
-                        Title = "Data Map",
-                        Subtitle = "Data Flow Tour",
-                        Lookup = "data-map",
-                        Selector = "#dataMapModuleOption",
-                        Orientation = OrientationTypes.Left,
-                        Content = "The data map is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
+                        Content = "The device stream is also designed for large scale data ingestion, from either an IoT enabled device or from an application. However, a Device Stream can facilitate 2-way communication with a device. It can receive data from a device, and it can also send firmware or software updates back down to the device."
                     },
                     new GuidedTourStep()
                     {
                         ID = new Guid("00000000-0000-0000-0000-000000000094"),
+                        Title = "Data Map",
+                        Subtitle = "Data Flow Tour",
+                        Lookup = "data-map",
+                        Selector = "#dataMapModuleOption",
+                        Orientation = OrientationTypes.TopLeft,
+                        Content = "The data map is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000095"),
                         Title = "Cold Storage",
                         Subtitle = "Data Flow Tour",
                         Lookup = "cold-storage",
@@ -713,7 +723,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     },
                     new GuidedTourStep()
                     {
-                        ID = new Guid("00000000-0000-0000-0000-000000000095"),
+                        ID = new Guid("00000000-0000-0000-0000-000000000096"),
                         Title = "Warm Storage",
                         Subtitle = "Data Flow Tour",
                         Lookup = "warm-storage",
@@ -723,7 +733,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     },
                     new GuidedTourStep()
                     {
-                        ID = new Guid("00000000-0000-0000-0000-000000000096"),
+                        ID = new Guid("00000000-0000-0000-0000-000000000097"),
                         Title = "Hot Storage",
                         Subtitle = "Data Flow Tour",
                         Lookup = "hot-storage",
@@ -733,17 +743,17 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     },
                     new GuidedTourStep()
                     {
-                        ID = new Guid("00000000-0000-0000-0000-000000000097"),
+                        ID = new Guid("00000000-0000-0000-0000-000000000098"),
                         Title = "Warm Query",
                         Subtitle = "Data Flow Tour",
                         Lookup = "warm-query",
                         Selector = "#warmQueryModuleOption",
-                        Orientation = OrientationTypes.Left,
+                        Orientation = OrientationTypes.TopLeft,
                         Content = "Depending on the dashboard and reporting tools you’re using; you may not be able to connect directly to the warm storage. If that’s the case, the warm query provides an API endpoint that you can use to get access to your data."
                     },
                     new GuidedTourStep()
                     {
-                        ID = new Guid("00000000-0000-0000-0000-000000000098"),
+                        ID = new Guid("00000000-0000-0000-0000-000000000099"),
                         Title = "Save",
                         Subtitle = "Data Flow Tour",
                         Lookup = "save",
@@ -753,7 +763,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     },
                     new GuidedTourStep()
                     {
-                        ID = new Guid("00000000-0000-0000-0000-000000000099"),
+                        ID = new Guid("00000000-0000-0000-0001-000000000090"),
                         Title = "Deploy",
                         Subtitle = "Data Flow Tour",
                         Lookup = "deploy",
