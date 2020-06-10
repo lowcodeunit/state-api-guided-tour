@@ -790,6 +790,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Title = "Architecture",
                         Subtitle = "IDE Settings Tour",
                         Lookup = "architecture",
+                        IframeSelector = "#externalDialogIframe",
                         Selector = "#settingsArchitectureNavLink",
                         Orientation = OrientationTypes.Right,
                         Content = "Add, edit, delete your organization's Low-Code Unit NPM packages."
@@ -800,6 +801,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Title = "Configuration",
                         Subtitle = "IDE Settings Tour",
                         Lookup = "configuration",
+                        IframeSelector = "#externalDialogIframe",
                         Selector = "#settingsConfigurationNavLink",
                         Orientation = OrientationTypes.Right,
                         Content = "Manage which elements of your Low Code Units appear in your IDE."
@@ -810,6 +812,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Title = "Setup",
                         Subtitle = "IDE Settings Tour",
                         Lookup = "setup",
+                        IframeSelector = "#externalDialogIframe",
                         Selector = "#settingsSetupNavLink",
                         Orientation = OrientationTypes.Right,
                         Content = "Modify the layout of your IDE’s activity bar and side bar."
@@ -820,6 +823,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Title = "Marketplace",
                         Subtitle = "IDE Settings Tour",
                         Lookup = "marketplace",
+                        IframeSelector = "#externalDialogIframe",
                         Selector = "#settingsMarketplaceNavLink",
                         Orientation = OrientationTypes.Right,
                         Content = "Our Low-Code Unit™ marketplace is coming soon."

@@ -86,6 +86,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
         public virtual int HighlightPadding { get; set; }
 
         [DataMember]
+        public virtual string IframeSelector { get; set; }
+
+        [DataMember]
         public virtual string Lookup { get; set; }
 
         [DataMember]
