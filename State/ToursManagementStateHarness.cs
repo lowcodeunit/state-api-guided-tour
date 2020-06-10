@@ -608,7 +608,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Welcome Tour",
                         Lookup = "settings",
                         Selector = "#settingsLink",
-                        Orientation = OrientationTypes.TopRight,
+                        Orientation = OrientationTypes.TopLeft,
                         Content = "In settings you can customize the IDE to suit your needs. Modify or upload Low-Code Units and configure your IDE activity bar and side bar."
                     }
                 }
@@ -708,7 +708,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "data-map",
                         Selector = "#dataMapModuleOption",
-                        Orientation = OrientationTypes.TopLeft,
+                        Orientation = OrientationTypes.TopRight,
                         Content = "The data map is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
                     },
                     new GuidedTourStep()
@@ -748,7 +748,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Subtitle = "Data Flow Tour",
                         Lookup = "warm-query",
                         Selector = "#warmQueryModuleOption",
-                        Orientation = OrientationTypes.TopLeft,
+                        Orientation = OrientationTypes.TopRight,
                         Content = "Depending on the dashboard and reporting tools you’re using; you may not be able to connect directly to the warm storage. If that’s the case, the warm query provides an API endpoint that you can use to get access to your data."
                     },
                     new GuidedTourStep()
