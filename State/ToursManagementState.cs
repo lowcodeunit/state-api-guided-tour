@@ -31,6 +31,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
         public virtual GuidedTour CurrentTour { get; set; }
 
         [DataMember]
+        public virtual string EnvironmentLookup { get; set; }
+
+        [DataMember]
         public virtual bool Loading { get; set; }
 
         [DataMember]
