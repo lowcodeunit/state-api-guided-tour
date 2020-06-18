@@ -484,6 +484,90 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             };
         }
 
+        protected virtual GuidedTour createDataFlowToolTourProd(string lookup)
+        {
+            return new GuidedTour()
+            {
+                ID = new Guid("00000000-0000-0000-0000-000000000005"),
+                IsFirstTimeViewing = true,
+                Lookup = lookup,
+                UseOrb = false,
+                Steps = new List<GuidedTourStep>()
+                {
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000050"),
+                        Title = "Emulator",
+                        Subtitle = "Emulated Data Flow Tour",
+                        Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='111fb8c3-0e30-46de-a61c-b78fe1b9d5dd']", // selects by attribute selector
+                        Orientation = OrientationTypes.Top,
+                        Lookup = "emulator",
+                        Content = "The emulator is where you can configure your test device data and the frequency that it posts to the ingest. This is ideal for getting data streaming through your IoT infrastructure and into business applications and dashboards, while your hardware team is working to get the actual devices online. Once the real devices are online you can turn off the emulator."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000051"),
+                        Title = "Ingest",
+                        Subtitle = "Emulated Data Flow Tour",
+                        Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='39240064-dca2-4a18-9377-777d0e4d29db']",
+                        Orientation = OrientationTypes.Top,
+                        Lookup = "ingest",
+                        Content = "The ingest is a security-enhanced communication channel for sending and receiving data from your devices or an emulator."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000052"),
+                        Title = "Data Map",
+                        Subtitle = "Emulated Data Flow Tour",
+                        Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='4709ff32-3bd8-4535-950d-02518fa61d7f']",
+                        Orientation = OrientationTypes.Top,
+                        Lookup = "data-map",
+                        Content = "The data map is a real-time analytics service that allows you to manipulate and analyze your data before pushing to the configured outputs."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000053"),
+                        Title = "Cold Storage",
+                        Subtitle = "Emulated Data Flow Tour",
+                        Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='8eb91baf-d4a4-4b9b-b941-3c05bc5cbbd0']",
+                        Orientation = OrientationTypes.Top,
+                        Lookup = "cold-storage",
+                        Content = "This storage option costs less than $1/month. You can send raw, untouched JSON messages from a device to cold storage. This allows you to refer to cold storage for debugging when you need to see the exact messages that were sent from a device."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000054"),
+                        Title = "Warm Storage",
+                        Subtitle = "Emulated Data Flow Tour",
+                        Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='b123dda9-788d-47eb-8698-7d9c80817492']",
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "warm-storage",
+                        Content = "This storage option is more expensive, starting at $25/month. Warm storage is a database, like CosmosDB or SQL Server. It's queryable storage that is ideal for connecting to reporting solutions like Power BI. Fathym helps you convert units (like Celsius to Fahrenheit) before storing in warm storage so the data is ready for downstream use."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000055"),
+                        Title = "Hot Storage",
+                        Subtitle = "Emulated Data Flow Tour",
+                        Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='42877965-0bed-4edf-9b99-e308a856c839']",
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "hot-storage",
+                        Content = "This storage option is also inexpensive, normally less than $1/month. Hot storage is PubSub – Publisher/Subscriber relationships. A publisher application creates and sends messages to a topic. Subscriber applications create a subscription to a topic to receive messages from it. Fathym uses hot storage for real-time sensor dashboards."
+                    },
+                    new GuidedTourStep()
+                    {
+                        ID = new Guid("00000000-0000-0000-0000-000000000056"),
+                        Title = "Warm Query",
+                        Subtitle = "Emulated Data Flow Tour",
+                        Selector = "lcu-limited-trial-data-flow-element .flowchart-object[data-jtk-node-id='5708f3b6-ecc0-4aed-9bcd-f389d8720c73']",
+                        Orientation = OrientationTypes.Top,
+                        Lookup = "warm-query",
+                        Content = "Depending on the dashboard and reporting tools you’re using, you may not be able to connect directly to the warm storage. If that’s the case, the warm query provides an API endpoint that you can use to get access to the data in warm storage."
+                    }
+                }
+            };
+        }
+
         protected virtual GuidedTour createIoTDeveloperJourneyTour(string lookup)
         {
             return new GuidedTour()
