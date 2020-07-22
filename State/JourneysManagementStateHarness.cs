@@ -43,6 +43,11 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         #endregion
 
         #region API Methods
+        public virtual async Task EstablishIsIoTStarter()
+        {
+            State.IsIoTStarter = true;
+        }
+
         public virtual async Task LoadJourneyOptions()
         {
             State.Journeys = new List<JourneyOption>()
@@ -139,6 +144,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
 
         public virtual async Task RefreshJourneys()
         {
+            await EstablishIsIoTStarter();
+            
             await LoadJourneyOptions();
         }
         #endregion
