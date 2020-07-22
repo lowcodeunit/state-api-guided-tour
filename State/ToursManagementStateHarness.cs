@@ -671,7 +671,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                         Title = "IoT Developer Journey",
                         Subtitle = "To the Edge and Beyond",
                         Lookup = "iot-journey",
-                        Content = "In 6 steps, I’ll guide you how on IoT developers can use the Fathym Low-Code Framework to rapidly provision end-to-end IoT infrastructure and build enterprise scale IoT solutions."
+                        Content = "In 6 steps, I’ll show you how IoT developers can use the Fathym Low-Code Framework to rapidly provision end-to-end IoT infrastructure and build enterprise scale IoT solutions."
                     },
                     new GuidedTourStep()
                     {
@@ -716,12 +716,12 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
                     new GuidedTourStep()
                     {
                         ID = new Guid("00000000-0000-0000-0000-000000000065"),
-                        Title = "Access Control",
+                        Title = "Open Application",
                         Subtitle = "To the Edge and Beyond",
-                        Selector = "lcu-data-apps-config #accessControlToggle",
-                        Orientation = OrientationTypes.Top,
-                        Lookup = "access",
-                        Content = "Set your application to private if you want to control access for internal use or set to public if you want to share it with external users without a login. You can update visibility settings at any point."
+                        Selector = "lcu-data-apps-config #openApplicationInBrowserButton",
+                        Orientation = OrientationTypes.Left,
+                        Lookup = "open-application",
+                        Content = "This application consists of a sample dashboard which is connected to the Hot Storage option in the Emulated Data Flow. Click here to open the application in your browser and view real-time emulated data."
                     }
                 }
             };
