@@ -56,7 +56,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
             State.IoTData.Add(new JourneysIoTDetails()
             {
                 Name = "Device 1",
-                Color = "",
+                Color = "#5AA454",
                 Data = new Dictionary<string, double>()
                 {
                     { "July 16th", 74 },
@@ -68,6 +68,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
             State.IoTData.Add(new JourneysIoTDetails()
             {
                 Name = "Device 2",
+                Color = "#E44D25",
                 Data = new Dictionary<string, double>()
                 {
                     { "July 16th", 82 },
@@ -79,6 +80,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
             State.IoTData.Add(new JourneysIoTDetails()
             {
                 Name = "Device 3",
+                Color = "#CFC0BB",
                 Data = new Dictionary<string, double>()
                 {
                     { "July 16th", 68 },
