@@ -25,13 +25,30 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
     public class JourneysManagementState
     {
         [DataMember]
+        public virtual List<JourneysIoTDetails> IoTData { get; set; }
+
+        [DataMember]
         public virtual bool IsIoTStarter { get; set; }
-        
+
         [DataMember]
         public virtual List<JourneyOption> Journeys { get; set; }
 
         [DataMember]
         public virtual bool Loading { get; set; }
+    }
+
+    [Serializable]
+    [DataContract]
+    public class JourneysIoTDetails
+    {
+        [DataMember]
+        public virtual string Color { get; set; }
+
+        [DataMember]
+        public virtual string Name { get; set; }
+
+        [DataMember]
+        public virtual Dictionary<string, double> Data { get; set; }
     }
 
     [DataContract]

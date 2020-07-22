@@ -37,15 +37,55 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         #region Constructors
         public JourneysManagementStateHarness(JourneysManagementState state)
             : base(state ?? new JourneysManagementState())
-        {
-
-        }
+        { }
         #endregion
 
         #region API Methods
-        public virtual async Task EstablishIsIoTStarter()
+        public virtual async Task EstablishIoTStarter()
         {
             State.IsIoTStarter = true;
+
+            if (State.IsIoTStarter)
+                await LoadIoTData();
+        }
+
+        public virtual async Task LoadIoTData()
+        {
+            State.IoTData = new List<JourneysIoTDetails>();
+
+            State.IoTData.Add(new JourneysIoTDetails()
+            {
+                Name = "Device 1",
+                Color = "",
+                Data = new Dictionary<string, double>()
+                {
+                    { "July 16th", 74 },
+                    { "July 17th", 78 },
+                    { "July 18th", 82 }
+                }
+            });
+
+            State.IoTData.Add(new JourneysIoTDetails()
+            {
+                Name = "Device 2",
+                Data = new Dictionary<string, double>()
+                {
+                    { "July 16th", 82 },
+                    { "July 17th", 86 },
+                    { "July 18th", 84 }
+                }
+            });
+
+            State.IoTData.Add(new JourneysIoTDetails()
+            {
+                Name = "Device 3",
+                Data = new Dictionary<string, double>()
+                {
+                    { "July 16th", 68 },
+                    { "July 17th", 78 },
+                    { "July 18th", 85 }
+                }
+            });
         }
 
         public virtual async Task LoadJourneyOptions()
@@ -144,8 +184,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
 
         public virtual async Task RefreshJourneys()
         {
-            await EstablishIsIoTStarter();
-            
+            await EstablishIoTStarter();
+
             await LoadJourneyOptions();
         }
         #endregion
