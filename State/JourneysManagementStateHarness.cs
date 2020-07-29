@@ -44,9 +44,6 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         public virtual async Task EstablishIoTStarter()
         {
             State.IsIoTStarter = true;
-
-            if (State.IsIoTStarter)
-                await LoadIoTData();
         }
 
         public virtual async Task LoadIoTData()
@@ -96,12 +93,12 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
             {
                 new JourneyOption()
                 {
-                    Name = "IOT - To the Edge and Beyond!",
+                    Name = "IoT - To the Edge and Beyond!",
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
                     Description = "Build and connect edge devices, securely manage, visualize and analyze your data, and take action on your intelligence.",
-                    Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
+                    Roles = new List<string>(){ "IoT", "Data Science" },
                     Active = true
                 },
                 // new JourneyOption()
@@ -182,11 +179,65 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                 //     Active = true
                 // }
             };
+
+            if (State.IsIoTStarter)
+            {
+                State.Journeys.AddRange(new List<JourneyOption>()
+                {
+                    new JourneyOption()
+                    {
+                        Name = "Device Insights & Monitoring",
+                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
+                        ContentType = JourneyContentTypes.Image,
+                        Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                        Description = "Monitor and gain insights about your devices from R&D through deployment.",
+                        Roles = new List<string>(){ "IoT", "Insights" },
+                        Active = true,
+                        HighlightedOrder = 1
+                    },
+                    new JourneyOption()
+                    {
+                        Name = "Mean, Median and Standard Deviation - Elementary Statistics",
+                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
+                        ContentType = JourneyContentTypes.Image,
+                        Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                        Description = "Calculate Elementary Statistics on your stream of IoT data.",
+                        Roles = new List<string>(){ "IoT", "Data Science", "Insights" },
+                        Active = true,
+                        HighlightedOrder = 2
+                    },
+                    new JourneyOption()
+                    {
+                        Name = "ABB Device Notifications and Resolution",
+                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
+                        ContentType = JourneyContentTypes.Image,
+                        Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                        Description = "Receive notifications around configured threshholds and resolve them once addressed.",
+                        Roles = new List<string>(){ "IoT", "Insights" },
+                        Active = true,
+                        HighlightedOrder = 3
+                    },
+                    new JourneyOption()
+                    {
+                        Name = "Augment your Data with Real-Time Surface Forecast",
+                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
+                        ContentType = JourneyContentTypes.Image,
+                        Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                        Description = "Receive notifications around configured threshholds and resolve them once addressed.",
+                        Roles = new List<string>(){ "IoT", "Insights" },
+                        Active = true,
+                        HighlightedOrder = 3
+                    }
+                });
+            }
         }
 
         public virtual async Task RefreshJourneys()
         {
             await EstablishIoTStarter();
+
+            // if (State.IsIoTStarter)
+            //     await LoadIoTData();
 
             await LoadJourneyOptions();
         }

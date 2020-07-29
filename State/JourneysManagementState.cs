@@ -71,11 +71,13 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         public virtual JourneyContentTypes ContentType { get; set; }
 
         [DataMember]
+        public virtual int? HighlightedOrder { get; set; }
+
+        [DataMember]
         public virtual string Name { get; set; }
 
         [DataMember]
-        [JsonProperty("Roles", ItemConverterType = typeof(StringEnumConverter))]
-        public virtual List<JourneyRoleTypes> Roles { get; set; }
+        public virtual List<string> Roles { get; set; }
 
         [DataMember]
         public virtual List<string> Uses { get; set; }
@@ -89,18 +91,5 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
 
         [EnumMember]
         Video
-    }
-
-    [DataContract]
-    public enum JourneyRoleTypes
-    {
-        [EnumMember]
-        Administrator,
-
-        [EnumMember]
-        Designer,
-
-        [EnumMember]
-        Developer
     }
 }
