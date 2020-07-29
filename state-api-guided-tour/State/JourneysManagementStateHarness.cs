@@ -187,8 +187,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     new JourneyOption()
                     {
                         Name = "Device Insights & Monitoring",
-                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
-                        ContentType = JourneyContentTypes.Image,
+                        ContentURL = "https://player.vimeo.com/video/403508452",
+                        ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
                         Description = "Monitor and gain insights about your devices from R&D through deployment.",
                         Roles = new List<string>(){ "IoT", "Insights" },
@@ -198,8 +198,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     new JourneyOption()
                     {
                         Name = "Mean, Median and Standard Deviation - Elementary Statistics",
-                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
-                        ContentType = JourneyContentTypes.Image,
+                        ContentURL = "https://player.vimeo.com/video/403508452",
+                        ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
                         Description = "Calculate Elementary Statistics on your stream of IoT data.",
                         Roles = new List<string>(){ "IoT", "Data Science", "Insights" },
@@ -209,8 +209,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     new JourneyOption()
                     {
                         Name = "ABB Device Notifications and Resolution",
-                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
-                        ContentType = JourneyContentTypes.Image,
+                        ContentURL = "https://player.vimeo.com/video/403508452",
+                        ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
                         Description = "Receive notifications around configured threshholds and resolve them once addressed.",
                         Roles = new List<string>(){ "IoT", "Insights" },
@@ -220,8 +220,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     new JourneyOption()
                     {
                         Name = "Augment your Data with Real-Time Surface Forecast",
-                        ContentURL = "https://fathym.com/wp-content/uploads/2019/07/logo-octopus-300x77.png",
-                        ContentType = JourneyContentTypes.Image,
+                        ContentURL = "https://player.vimeo.com/video/403508452",
+                        ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
                         Description = "Receive notifications around configured threshholds and resolve them once addressed.",
                         Roles = new List<string>(){ "IoT", "Insights" },
