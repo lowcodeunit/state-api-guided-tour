@@ -197,7 +197,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     },
                     new JourneyOption()
                     {
-                        Name = "Mean, Median and Standard Deviation /2 Machine Learning",
+                        Name = "Mean, Median and Standard Deviation with Machine Learning",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
