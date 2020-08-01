@@ -189,22 +189,24 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         Name = "Device Insights & Monitoring",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
-                        Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                        Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
                         Description = "Monitor and gain insights about your devices from R&D through deployment.",
                         Roles = new List<string>(){ "IoT", "Insights" },
                         Active = true,
-                        HighlightedOrder = 1
+                        HighlightedOrder = 1,
+                        ActionURL = "/freeboard"
                     },
                     new JourneyOption()
                     {
                         Name = "Mean, Median and Standard Deviation with Machine Learning",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
-                        Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                        Uses = new List<string>() { "Machine Learning", "Data Flow", "Data Applications" },
                         Description = "Calculate Elementary Statistics on your stream of IoT data.",
                         Roles = new List<string>(){ "IoT", "Data Science", "Insights" },
                         Active = true,
-                        HighlightedOrder = 2
+                        HighlightedOrder = 2,
+                        ActionURL = "https://fathym.com"
                     },
                     new JourneyOption()
                     {
@@ -215,7 +217,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         Description = "Receive notifications around configured threshholds and resolve them once addressed.",
                         Roles = new List<string>(){ "IoT", "Insights" },
                         Active = true,
-                        HighlightedOrder = 3
+                        HighlightedOrder = 3,
+                        ActionURL = "https://fathym.com"
                     },
                     new JourneyOption()
                     {
@@ -226,7 +229,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         Description = "Receive notifications around configured threshholds and resolve them once addressed.",
                         Roles = new List<string>(){ "IoT", "Insights" },
                         Active = true,
-                        HighlightedOrder = 3
+                        HighlightedOrder = 3,
+                        ActionURL = "https://fathym.com"
                     }
                 });
             }

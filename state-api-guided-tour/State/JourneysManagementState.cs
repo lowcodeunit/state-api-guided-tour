@@ -58,20 +58,29 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         public virtual bool Active { get; set; }
 
         [DataMember]
+        public virtual string ActionURL { get; set; }
+
+        [DataMember]
         public virtual bool ComingSoon { get; set; }
 
         [DataMember]
         public virtual string ContentURL { get; set; }
 
         [DataMember]
-        public virtual string Description { get; set; }
-
-        [DataMember]
         [JsonConverter(typeof(StringEnumConverter))]
         public virtual JourneyContentTypes ContentType { get; set; }
 
         [DataMember]
+        public virtual string Description { get; set; }
+
+        [DataMember]
+        public virtual JourneyOptionDetails Details { get; set; }
+
+        [DataMember]
         public virtual int? HighlightedOrder { get; set; }
+
+        [DataMember]
+        public virtual string Lookup { get; set; }
 
         [DataMember]
         public virtual string Name { get; set; }
@@ -81,6 +90,22 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
 
         [DataMember]
         public virtual List<string> Uses { get; set; }
+    }
+
+    [DataContract]
+    public class JourneyOptionDetails
+    {
+        [DataMember]
+        public virtual string Abstract { get; set; }
+
+        [DataMember]
+        public virtual string Blog { get; set; }
+
+        [DataMember]
+        public virtual string Documentation { get; set; }
+
+        [DataMember]
+        public virtual List<string> RelatedJourneys { get; set; }
     }
 
     [DataContract]
