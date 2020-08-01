@@ -94,12 +94,40 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                 new JourneyOption()
                 {
                     Name = "IoT - To the Edge and Beyond!",
+                    Lookup = "iot-edge-beyond",
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
                     Description = "Build and connect edge devices, securely manage, visualize and analyze your data, and take action on your intelligence.",
                     Roles = new List<string>(){ "IoT", "Data Science" },
-                    Active = true
+                    ActionURL = "https://fathym.com",
+                    Active = true,
+                    Details = new JourneyOptionDetails()
+                    {
+                        Abstract = new List<string>()
+                        {
+                            "Multiple lines of descriptive...",
+                            "Paragraphs of text"
+                        },
+                        Documentation = new Dictionary<string, string>()
+                        {
+                            { "Links to", "https://fathym.com" },
+                            { "Different types", "https://fathym.com" },
+                            { "of Documentation", "https://fathym.com" }
+                        },
+                        RelatedJourneys = new Dictionary<string, string>() {
+                            { "Titles for journeys", "the-journey-lookup" },
+                            { "Titles for journeys2", "the-journey-lookup" },
+                            { "Titles for journeys3", "the-journey-lookup" }
+                        },
+                        Support = new Dictionary<string, string>()
+                        {
+                            { "Links to", "https://fathym.com" },
+                            { "Different types", "https://fathym.com" },
+                            { "Of Support Articles", "https://fathym.com" },
+                            { "Tutorials and More", "https://fathym.com" }
+                        }
+                    }
                 },
                 // new JourneyOption()
                 // {
@@ -187,6 +215,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     new JourneyOption()
                     {
                         Name = "Device Insights & Monitoring",
+                        Lookup = "iot-insights-monitoring",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
@@ -194,11 +223,38 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         Roles = new List<string>(){ "IoT", "Insights" },
                         Active = true,
                         HighlightedOrder = 1,
-                        ActionURL = "/freeboard"
+                        ActionURL = "/freeboard",
+                        Details = new JourneyOptionDetails()
+                        {
+                            Abstract = new List<string>()
+                            {
+                                "Get started right away using open source tools to bring your data to life...",
+                                "More information that needs to be filled out"
+                            },
+                            Documentation = new Dictionary<string, string>()
+                            {
+                                { "Using Freeboard with Fathym", "https://fathym.com" },
+                                { "Configuring Freeboard with Custom Dashboard", "https://fathym.com" },
+                                { "Deliver Open Source Tools on Fathym", "https://fathym.com" }
+                            },
+                            RelatedJourneys = new Dictionary<string, string>() {
+                                { "Titles for journeys", "the-journey-lookup" },
+                                { "Titles for journeys2", "the-journey-lookup" },
+                                { "Titles for journeys3", "the-journey-lookup" }
+                            },
+                            Support = new Dictionary<string, string>()
+                            {
+                                { "Real-Time Insights & Monitoring", "/freeboard" },
+                                { "A blog about freeboard on fathym", "https://fathym.com" },
+                                { "Another blog about freeboard on fathym", "https://fathym.com" },
+                                { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
+                            }
+                        }
                     },
                     new JourneyOption()
                     {
                         Name = "Mean, Median and Standard Deviation with Machine Learning",
+                        Lookup = "iot-elementary-statistics",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Machine Learning", "Data Flow", "Data Applications" },
@@ -206,11 +262,38 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         Roles = new List<string>(){ "IoT", "Data Science", "Insights" },
                         Active = true,
                         HighlightedOrder = 2,
-                        ActionURL = "https://fathym.com"
+                        ActionURL = "https://fathym.com",
+                        Details = new JourneyOptionDetails()
+                        {
+                            Abstract = new List<string>()
+                            {
+                                "Multiple lines of descriptive...",
+                                "Paragraphs of text"
+                            },
+                            Documentation = new Dictionary<string, string>()
+                            {
+                                { "Links to", "https://fathym.com" },
+                                { "Different types", "https://fathym.com" },
+                                { "of Documentation", "https://fathym.com" }
+                            },
+                            RelatedJourneys = new Dictionary<string, string>() {
+                                { "Titles for journeys", "the-journey-lookup" },
+                                { "Titles for journeys2", "the-journey-lookup" },
+                                { "Titles for journeys3", "the-journey-lookup" }
+                            },
+                            Support = new Dictionary<string, string>()
+                            {
+                                { "Links to", "https://fathym.com" },
+                                { "Different types", "https://fathym.com" },
+                                { "Of Support Articles", "https://fathym.com" },
+                                { "Tutorials and More", "https://fathym.com" }
+                            }
+                        }
                     },
                     new JourneyOption()
                     {
                         Name = "ABB Device Notifications and Resolution",
+                        Lookup = "iot-notifications-resolution",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
@@ -218,11 +301,38 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         Roles = new List<string>(){ "IoT", "Insights" },
                         Active = true,
                         HighlightedOrder = 3,
-                        ActionURL = "https://fathym.com"
+                        ActionURL = "https://fathym.com",
+                        Details = new JourneyOptionDetails()
+                        {
+                            Abstract = new List<string>()
+                            {
+                                "Multiple lines of descriptive...",
+                                "Paragraphs of text"
+                            },
+                            Documentation = new Dictionary<string, string>()
+                            {
+                                { "Links to", "https://fathym.com" },
+                                { "Different types", "https://fathym.com" },
+                                { "of Documentation", "https://fathym.com" }
+                            },
+                            RelatedJourneys = new Dictionary<string, string>() {
+                                { "Titles for journeys", "the-journey-lookup" },
+                                { "Titles for journeys2", "the-journey-lookup" },
+                                { "Titles for journeys3", "the-journey-lookup" }
+                            },
+                            Support = new Dictionary<string, string>()
+                            {
+                                { "Links to", "https://fathym.com" },
+                                { "Different types", "https://fathym.com" },
+                                { "Of Support Articles", "https://fathym.com" },
+                                { "Tutorials and More", "https://fathym.com" }
+                            }
+                        }
                     },
                     new JourneyOption()
                     {
                         Name = "Augment your Data with Real-Time Surface Forecast",
+                        Lookup = "iot-real-time-surface-forecast",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
@@ -230,10 +340,41 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         Roles = new List<string>(){ "IoT", "Insights" },
                         Active = true,
                         HighlightedOrder = 3,
-                        ActionURL = "https://fathym.com"
+                        ActionURL = "https://fathym.com",
+                        Details = new JourneyOptionDetails()
+                        {
+                            Abstract = new List<string>()
+                            {
+                                "Multiple lines of descriptive...",
+                                "Paragraphs of text"
+                            },
+                            Documentation = new Dictionary<string, string>()
+                            {
+                                { "Links to", "https://fathym.com" },
+                                { "Different types", "https://fathym.com" },
+                                { "of Documentation", "https://fathym.com" }
+                            },
+                            RelatedJourneys = new Dictionary<string, string>() {
+                                { "Titles for journeys", "the-journey-lookup" },
+                                { "Titles for journeys2", "the-journey-lookup" },
+                                { "Titles for journeys3", "the-journey-lookup" }
+                            },
+                            Support = new Dictionary<string, string>()
+                            {
+                                { "Links to", "https://fathym.com" },
+                                { "Different types", "https://fathym.com" },
+                                { "Of Support Articles", "https://fathym.com" },
+                                { "Tutorials and More", "https://fathym.com" }
+                            }
+                        }
                     }
                 });
             }
+        }
+
+        public virtual async Task MoreDetails(string journeyLookup)
+        {
+            State.CurrentJourneyLookup = journeyLookup;
         }
 
         public virtual async Task RefreshJourneys()

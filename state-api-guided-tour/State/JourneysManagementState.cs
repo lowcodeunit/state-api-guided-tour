@@ -25,6 +25,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
     public class JourneysManagementState
     {
         [DataMember]
+        public virtual string CurrentJourneyLookup { get; set; }
+
+        [DataMember]
         public virtual List<JourneysIoTDetails> IoTData { get; set; }
 
         [DataMember]
@@ -96,16 +99,16 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
     public class JourneyOptionDetails
     {
         [DataMember]
-        public virtual string Abstract { get; set; }
+        public virtual List<string> Abstract { get; set; }
 
         [DataMember]
-        public virtual string Blog { get; set; }
+        public virtual Dictionary<string, string> Documentation { get; set; }
+        [DataMember]
+        public virtual Dictionary<string, string> RelatedJourneys { get; set; }
 
         [DataMember]
-        public virtual string Documentation { get; set; }
+        public virtual Dictionary<string, string> Support { get; set; }
 
-        [DataMember]
-        public virtual List<string> RelatedJourneys { get; set; }
     }
 
     [DataContract]
