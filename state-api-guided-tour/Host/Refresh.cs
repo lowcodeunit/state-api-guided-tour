@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using Fathym;
-using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.Azure.Storage.Blob;
 using System.Runtime.Serialization;
 using Fathym.API;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Host
         [FunctionName("Refresh")]
         public virtual async Task<Status> Run([HttpTrigger] HttpRequest req, ILogger log,
             [SignalR(HubName = GuidedTourState.HUB_NAME)]IAsyncCollector<SignalRMessage> signalRMessages,
-            [Blob("state-api/{headers.lcu-ent-api-key}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
+            [Blob("state-api/{headers.lcu-ent-lookup}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
         {
             var stateDetails = StateUtils.LoadStateDetails(req);
 
@@ -75,7 +75,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Host
         #region Helpers
         protected virtual async Task<Status> refreshTours(ToursManagementStateHarness harness, ILogger log, StateDetails stateDetails)
         {
-            await harness.RefreshTours(idMgr, stateDetails.EnterpriseAPIKey, stateDetails.Username);
+            await harness.RefreshTours(idMgr, stateDetails.EnterpriseLookup, stateDetails.Username);
 
             return Status.Success;
         }

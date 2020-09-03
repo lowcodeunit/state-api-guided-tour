@@ -97,31 +97,31 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
             }
         }
 
-        public virtual async Task Reset(IdentityManagerClient idMgr, string entApiKey, string username)
+        public virtual async Task Reset(IdentityManagerClient idMgr, string entLookup, string username)
         {
             State = new ToursManagementState();
 
-            await RefreshTours(idMgr, entApiKey, username);
+            await RefreshTours(idMgr, entLookup, username);
         }
 
-        public virtual async Task RefreshTours(IdentityManagerClient idMgr, string entApiKey, string username)
+        public virtual async Task RefreshTours(IdentityManagerClient idMgr, string entLookup, string username)
         {
             LoadGuidedTours();
 
-            await SetToursEnabled(idMgr, entApiKey, username);
+            await SetToursEnabled(idMgr, entLookup, username);
 
             if (State.CurrentTour == null && !State.ToursEnabled)
                 State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == "limited-trial-tour");
         }
 
-        public virtual async Task SetActiveTour(string entApiKey, string lookup)
+        public virtual async Task SetActiveTour(string entLookup, string lookup)
         {
             State.CurrentTour = State.Tours.FirstOrDefault(tour => tour.Lookup == lookup);
         }
 
-        public virtual async Task SetToursEnabled(IdentityManagerClient idMgr, string entApiKey, string username)
+        public virtual async Task SetToursEnabled(IdentityManagerClient idMgr, string entLookup, string username)
         {
-            var authResp = await idMgr.HasAccess(entApiKey, username, new List<string>() { "LCU.NapkinIDE.AllAccess" });
+            var authResp = await idMgr.HasAccess(entLookup, username, new List<string>() { "LCU.NapkinIDE.AllAccess" });
 
             State.ToursEnabled = !authResp.Status;
         }
