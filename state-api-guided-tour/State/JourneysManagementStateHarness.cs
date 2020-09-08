@@ -214,12 +214,23 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                 {
                     new JourneyOption()
                     {
-                        Name = "Device Insights & Monitoring",
+                        Name = "To start your IoT journey -",
                         Lookup = "iot-insights-monitoring",
                         ContentURL = "https://player.vimeo.com/video/403508452",
                         ContentType = JourneyContentTypes.Video,
                         Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
-                        Description = "Monitor and gain insights about your devices from R&D through deployment.",
+                        Description = @"<p>
+                      We have setup a few things automatically for you. This
+                      will allow you to start working with your devices and data
+                      immediately. Start exploring to see your data visualized
+                      in minutes on a best practice cloud setup for Azure.
+                    </p>
+
+                    <p>
+                      Your data is ready to begin using. Connect it with your
+                      favorite tools or let us help you walk through learning
+                      some new ones.
+                    </p>",
                         Roles = new List<string>(){ "IoT", "Insights" },
                         Active = true,
                         HighlightedOrder = 1,
@@ -228,8 +239,13 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         {
                             Abstract = new List<string>()
                             {
-                                "Get started right away using open source tools to bring your data to life...",
-                                "More information that needs to be filled out"
+                                @"We have setup a few things automatically for you. This
+                      will allow you to start working with your devices and data
+                      immediately. Start exploring to see your data visualized
+                      in minutes on a best practice cloud setup for Azure.",
+                                @"Your data is ready to begin using. Connect it with your
+                      favorite tools or let us help you walk through learning
+                      some new ones."
                             },
                             Documentation = new Dictionary<string, string>()
                             {
