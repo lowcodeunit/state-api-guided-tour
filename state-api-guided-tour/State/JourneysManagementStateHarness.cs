@@ -129,6 +129,44 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         }
                     }
                 },
+                new JourneyOption()
+                {
+                    Name = "Start Your Micro-Frontend Journey",
+                    Lookup = "iot-insights-monitoring",
+                    ContentURL = "https://player.vimeo.com/video/403508452",
+                    ContentType = JourneyContentTypes.Video,
+                    Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
+                    Description = @"<p>A new first paragraph of text from kilian for MFs.</p>
+                    <p>A second paragraph of text from Kilian for MFs.</p>",
+                    Roles = new List<string>(){ "IoT", "Insights" },
+                    Active = true,
+                    HighlightedOrder = 1,
+                    ActionURL = "/freeboard",
+                    Details = new JourneyOptionDetails()
+                    {
+                        Abstract = new List<string>()
+                        {
+                            @"Some more descriptive text",
+                            @"Even more descriptive text..."
+                        },
+                        Documentation = new Dictionary<string, string>()
+                        {
+                            { "Using Freeboard with Fathym", "https://fathym.com" },
+                            { "Configuring Freeboard with Custom Dashboard", "https://fathym.com" },
+                            { "Deliver Open Source Tools on Fathym", "https://fathym.com" }
+                        },
+                        RelatedJourneys = new Dictionary<string, string>() {
+                            { "IoT - To the Edge and Beyond", "iot-edge-beyond" }
+                        },
+                        Support = new Dictionary<string, string>()
+                        {
+                            { "Real-Time Insights & Monitoring", "/freeboard" },
+                            { "A blog about freeboard on fathym", "https://fathym.com" },
+                            { "Another blog about freeboard on fathym", "https://fathym.com" },
+                            { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
+                        }
+                    }
+                },
                 // new JourneyOption()
                 // {
                 //     Name = "Application Development",
@@ -257,45 +295,6 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                                 { "Titles for journeys", "the-journey-lookup" },
                                 { "Titles for journeys2", "the-journey-lookup" },
                                 { "Titles for journeys3", "the-journey-lookup" }
-                            },
-                            Support = new Dictionary<string, string>()
-                            {
-                                { "Real-Time Insights & Monitoring", "/freeboard" },
-                                { "A blog about freeboard on fathym", "https://fathym.com" },
-                                { "Another blog about freeboard on fathym", "https://fathym.com" },
-                                { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
-                            }
-                        }
-                    },
-                    new JourneyOption()
-                    {
-                        Name = "Start Your Micro-Frontend Journey",
-                        Lookup = "iot-insights-monitoring",
-                        ContentURL = "https://player.vimeo.com/video/403508452",
-                        ContentType = JourneyContentTypes.Video,
-                        Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
-                        Description = @"<p>A new first paragraph of text from kilian for MFs.</p>
-
-                    <p>A second paragraph of text from Kilian for MFs.</p>",
-                        Roles = new List<string>(){ "IoT", "Insights" },
-                        Active = true,
-                        HighlightedOrder = 1,
-                        ActionURL = "/freeboard",
-                        Details = new JourneyOptionDetails()
-                        {
-                            Abstract = new List<string>()
-                            {
-                                @"Some more descriptive text",
-                                @"Even more descriptive text..."
-                            },
-                            Documentation = new Dictionary<string, string>()
-                            {
-                                { "Using Freeboard with Fathym", "https://fathym.com" },
-                                { "Configuring Freeboard with Custom Dashboard", "https://fathym.com" },
-                                { "Deliver Open Source Tools on Fathym", "https://fathym.com" }
-                            },
-                            RelatedJourneys = new Dictionary<string, string>() {
-                                { "IoT - To the Edge and Beyond", "iot-edge-beyond" }
                             },
                             Support = new Dictionary<string, string>()
                             {
