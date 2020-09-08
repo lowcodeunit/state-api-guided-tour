@@ -109,6 +109,19 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         [DataMember]
         public virtual Dictionary<string, string> Support { get; set; }
 
+        [DataMember]
+        public virtual LazyElementConfig SupportConfig { get; set; }
+
+    }
+
+    [DataContract]
+    public class LazyElementConfig
+    {
+        [DataMember]
+        public virtual List<string> Assets { get; set; }
+
+        [DataMember]
+        public virtual string ElementName { get; set; }
     }
 
     [DataContract]

@@ -126,6 +126,11 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                             { "Different types", "https://fathym.com" },
                             { "Of Support Articles", "https://fathym.com" },
                             { "Tutorials and More", "https://fathym.com" }
+                        },
+                        SupportConfig = new LazyElementConfig()
+                        {
+                            Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
+                            ElementName = "lcu-guided-tour-journey-details-iot-edge-beyond"
                         }
                     }
                 },
@@ -164,6 +169,11 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                             { "A blog about freeboard on fathym", "https://fathym.com" },
                             { "Another blog about freeboard on fathym", "https://fathym.com" },
                             { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
+                        },
+                        SupportConfig = new LazyElementConfig()
+                        {
+                            Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
+                            ElementName = "lcu-guided-tour-journey-details-iot-starter-element"
                         }
                     }
                 },
@@ -302,6 +312,11 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                                 { "A blog about freeboard on fathym", "https://fathym.com" },
                                 { "Another blog about freeboard on fathym", "https://fathym.com" },
                                 { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
+                            },
+                            SupportConfig = new LazyElementConfig()
+                            {
+                                Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
+                                ElementName = "lcu-guided-tour-journey-details-micro-frontend-starter-element"
                             }
                         }
                     },
