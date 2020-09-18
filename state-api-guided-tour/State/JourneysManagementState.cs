@@ -25,6 +25,9 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
     public class JourneysManagementState
     {
         [DataMember]
+        public virtual string CurrentJourneyLookup { get; set; }
+
+        [DataMember]
         public virtual List<JourneysIoTDetails> IoTData { get; set; }
 
         [DataMember]
@@ -58,27 +61,67 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         public virtual bool Active { get; set; }
 
         [DataMember]
+        public virtual string ActionURL { get; set; }
+
+        [DataMember]
         public virtual bool ComingSoon { get; set; }
 
         [DataMember]
         public virtual string ContentURL { get; set; }
 
         [DataMember]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public virtual JourneyContentTypes ContentType { get; set; }
+
+        [DataMember]
         public virtual string Description { get; set; }
 
         [DataMember]
-        [JsonConverter(typeof(StringEnumConverter))]
-        public virtual JourneyContentTypes ContentType { get; set; }
+        public virtual JourneyOptionDetails Details { get; set; }
+
+        [DataMember]
+        public virtual int? HighlightedOrder { get; set; }
+
+        [DataMember]
+        public virtual string Lookup { get; set; }
 
         [DataMember]
         public virtual string Name { get; set; }
 
         [DataMember]
-        [JsonProperty("Roles", ItemConverterType = typeof(StringEnumConverter))]
-        public virtual List<JourneyRoleTypes> Roles { get; set; }
+        public virtual List<string> Roles { get; set; }
 
         [DataMember]
         public virtual List<string> Uses { get; set; }
+    }
+
+    [DataContract]
+    public class JourneyOptionDetails
+    {
+        [DataMember]
+        public virtual List<string> Abstract { get; set; }
+
+        [DataMember]
+        public virtual Dictionary<string, string> Documentation { get; set; }
+        [DataMember]
+        public virtual Dictionary<string, string> RelatedJourneys { get; set; }
+
+        [DataMember]
+        public virtual Dictionary<string, string> Support { get; set; }
+
+        [DataMember]
+        public virtual LazyElementConfig SupportConfig { get; set; }
+
+    }
+
+    [DataContract]
+    public class LazyElementConfig
+    {
+        [DataMember]
+        public virtual List<string> Assets { get; set; }
+
+        [DataMember]
+        public virtual string ElementName { get; set; }
     }
 
     [DataContract]
@@ -89,18 +132,5 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
 
         [EnumMember]
         Video
-    }
-
-    [DataContract]
-    public enum JourneyRoleTypes
-    {
-        [EnumMember]
-        Administrator,
-
-        [EnumMember]
-        Designer,
-
-        [EnumMember]
-        Developer
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using Fathym;
-using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.Azure.Storage.Blob;
 using System.Runtime.Serialization;
 using Fathym.API;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
         [FunctionName("Reset")]
         public virtual async Task<Status> Run([HttpTrigger] HttpRequest req, ILogger log,
             [SignalR(HubName = GuidedTourState.HUB_NAME)] IAsyncCollector<SignalRMessage> signalRMessages,
-            [Blob("state-api/{headers.lcu-ent-api-key}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
+            [Blob("state-api/{headers.lcu-ent-lookup}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
         {
             return await stateBlob.WithStateHarness<ToursManagementState, RecordStepRequest, ToursManagementStateHarness>(req, signalRMessages, log,
                 async (harness, reqData, actReq) =>
@@ -49,7 +49,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
 
                 var stateDetails = StateUtils.LoadStateDetails(req);
 
-                await harness.Reset(idMgr, stateDetails.EnterpriseAPIKey, stateDetails.Username);
+                await harness.Reset(idMgr, stateDetails.EnterpriseLookup, stateDetails.Username);
 
                 return Status.Success;
             });

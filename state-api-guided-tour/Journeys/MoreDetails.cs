@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using Fathym;
-using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.Azure.Storage.Blob;
 using System.Runtime.Serialization;
 using Fathym.API;
 using System.Collections.Generic;
@@ -20,41 +20,36 @@ using System.Security.Claims;
 using LCU.Personas.Client.Enterprises;
 using LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.State;
 using LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State;
+using LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State;
 
-namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Tours
-{
+namespace LCU.State.API.NapkinIDE.NapkinIDE.GuidedTour.Journeys
+{    
     [Serializable]
     [DataContract]
-    public class RecordStepRequest
+    public class MoreDetailsRequest
     {
         [DataMember]
-        public virtual string CurrentStep { get; set; }
-        
-        [DataMember]
-        public virtual bool IsComplete { get; set; }
-        
-        [DataMember]
-        public virtual string TourLookup { get; set; }
+        public virtual string JourneyLookup { get; set; }
     }
 
-    public class RecordStep
+    public class MoreDetails
     {
-        public RecordStep()
+        public MoreDetails()
         { }
 
-        [FunctionName("RecordStep")]
+        [FunctionName("MoreDetails")]
         public virtual async Task<Status> Run([HttpTrigger] HttpRequest req, ILogger log,
-            [SignalR(HubName = GuidedTourState.HUB_NAME)] IAsyncCollector<SignalRMessage> signalRMessages,
-            [Blob("state-api/{headers.lcu-ent-api-key}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
+            [SignalR(HubName = GuidedTourState.HUB_NAME)]IAsyncCollector<SignalRMessage> signalRMessages,
+            [Blob("state-api/{headers.lcu-ent-lookup}/{headers.lcu-hub-name}/{headers.x-ms-client-principal-id}/{headers.lcu-state-key}", FileAccess.ReadWrite)] CloudBlockBlob stateBlob)
         {
-            return await stateBlob.WithStateHarness<ToursManagementState, RecordStepRequest, ToursManagementStateHarness>(req, signalRMessages, log,
+            return await stateBlob.WithStateHarness<JourneysManagementState, MoreDetailsRequest, JourneysManagementStateHarness>(req, signalRMessages, log,
                 async (harness, reqData, actReq) =>
             {
-                log.LogInformation($"Recording step for {reqData.TourLookup}: {reqData.CurrentStep}");
+                log.LogInformation($"Setting Active Tour to: {reqData.JourneyLookup}");
 
                 var stateDetails = StateUtils.LoadStateDetails(req);
 
-                harness.RecordStep(reqData.TourLookup, reqData.CurrentStep, reqData.IsComplete);
+                await harness.MoreDetails(reqData.JourneyLookup);
 
                 return Status.Success;
             });
