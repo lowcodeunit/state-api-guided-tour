@@ -130,7 +130,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         SupportConfig = new LazyElementConfig()
                         {
                             Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
-                            ElementName = "lcu-guided-tour-journey-details-iot-edge-beyond"
+                            ElementName = "lcu-guided-tour-journey-details-iot-edge-beyond-element"
                         }
                     }
                 },
@@ -173,7 +173,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         SupportConfig = new LazyElementConfig()
                         {
                             Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
-                            ElementName = "lcu-guided-tour-journey-details-iot-starter-element"
+                            ElementName = "lcu-guided-tour-journey-details-micro-frontend-starter-element"
                         }
                     }
                 },
@@ -256,189 +256,186 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                 // }
             };
 
-            if (State.IsIoTStarter)
+            State.Journeys.AddRange(new List<JourneyOption>()
             {
-                State.Journeys.AddRange(new List<JourneyOption>()
+                new JourneyOption()
                 {
-                    new JourneyOption()
-                    {
-                        Name = "Start Your IoT Journey",
-                        Lookup = "iot-insights-monitoring",
-                        ContentURL = "https://player.vimeo.com/video/403508452",
-                        ContentType = JourneyContentTypes.Video,
-                        Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
-                        Description = @"<p>
-                      We have setup a few things automatically for you. This
-                      will allow you to start working with your devices and data
-                      immediately. Start exploring to see your data visualized
-                      in minutes on a best practice cloud setup for Azure.
-                    </p>
+                    Name = "Start Your IoT Journey",
+                    Lookup = "iot-insights-monitoring",
+                    ContentURL = "https://player.vimeo.com/video/403508452",
+                    ContentType = JourneyContentTypes.Video,
+                    Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
+                    Description = @"<p>
+                    We have setup a few things automatically for you. This
+                    will allow you to start working with your devices and data
+                    immediately. Start exploring to see your data visualized
+                    in minutes on a best practice cloud setup for Azure.
+                </p>
 
-                    <p>
-                      Your data is ready to begin using. Connect it with your
-                      favorite tools or let us help you walk through learning
-                      some new ones.
-                    </p>",
-                        Roles = new List<string>(){ "IoT", "Insights" },
-                        Active = true,
-                        HighlightedOrder = 1,
-                        ActionURL = "/freeboard",
-                        Details = new JourneyOptionDetails()
+                <p>
+                    Your data is ready to begin using. Connect it with your
+                    favorite tools or let us help you walk through learning
+                    some new ones.
+                </p>",
+                    Roles = new List<string>(){ "IoT", "Insights" },
+                    Active = true,
+                    HighlightedOrder = 1,
+                    ActionURL = "/freeboard",
+                    Details = new JourneyOptionDetails()
+                    {
+                        Abstract = new List<string>()
                         {
-                            Abstract = new List<string>()
-                            {
-                                @"We have setup a few things automatically for you. This
-                      will allow you to start working with your devices and data
-                      immediately. Start exploring to see your data visualized
-                      in minutes on a best practice cloud setup for Azure.",
-                                @"Your data is ready to begin using. Connect it with your
-                      favorite tools or let us help you walk through learning
-                      some new ones."
-                            },
-                            Documentation = new Dictionary<string, string>()
-                            {
-                                { "Using Freeboard with Fathym", "https://fathym.com" },
-                                { "Configuring Freeboard with Custom Dashboard", "https://fathym.com" },
-                                { "Deliver Open Source Tools on Fathym", "https://fathym.com" }
-                            },
-                            RelatedJourneys = new Dictionary<string, string>() {
-                                { "Titles for journeys", "the-journey-lookup" },
-                                { "Titles for journeys2", "the-journey-lookup" },
-                                { "Titles for journeys3", "the-journey-lookup" }
-                            },
-                            Support = new Dictionary<string, string>()
-                            {
-                                { "Real-Time Insights & Monitoring", "/freeboard" },
-                                { "A blog about freeboard on fathym", "https://fathym.com" },
-                                { "Another blog about freeboard on fathym", "https://fathym.com" },
-                                { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
-                            },
-                            SupportConfig = new LazyElementConfig()
-                            {
-                                Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
-                                ElementName = "lcu-guided-tour-journey-details-micro-frontend-starter-element"
-                            }
+                            @"We have setup a few things automatically for you. This
+                    will allow you to start working with your devices and data
+                    immediately. Start exploring to see your data visualized
+                    in minutes on a best practice cloud setup for Azure.",
+                            @"Your data is ready to begin using. Connect it with your
+                    favorite tools or let us help you walk through learning
+                    some new ones."
+                        },
+                        Documentation = new Dictionary<string, string>()
+                        {
+                            { "Using Freeboard with Fathym", "https://fathym.com" },
+                            { "Configuring Freeboard with Custom Dashboard", "https://fathym.com" },
+                            { "Deliver Open Source Tools on Fathym", "https://fathym.com" }
+                        },
+                        RelatedJourneys = new Dictionary<string, string>() {
+                            { "Titles for journeys", "the-journey-lookup" },
+                            { "Titles for journeys2", "the-journey-lookup" },
+                            { "Titles for journeys3", "the-journey-lookup" }
+                        },
+                        Support = new Dictionary<string, string>()
+                        {
+                            { "Real-Time Insights & Monitoring", "/freeboard" },
+                            { "A blog about freeboard on fathym", "https://fathym.com" },
+                            { "Another blog about freeboard on fathym", "https://fathym.com" },
+                            { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
+                        },
+                        SupportConfig = new LazyElementConfig()
+                        {
+                            Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
+                            ElementName = "lcu-guided-tour-journey-details-iot-starter-element"
                         }
-                    },
-                    // new JourneyOption()
-                    // {
-                    //     Name = "Mean, Median and Standard Deviation with Machine Learning",
-                    //     Lookup = "iot-elementary-statistics",
-                    //     ContentURL = "https://player.vimeo.com/video/403508452",
-                    //     ContentType = JourneyContentTypes.Video,
-                    //     Uses = new List<string>() { "Machine Learning", "Data Flow", "Data Applications" },
-                    //     Description = "Calculate Elementary Statistics on your stream of IoT data.",
-                    //     Roles = new List<string>(){ "IoT", "Data Science", "Insights" },
-                    //     Active = true,
-                    //     HighlightedOrder = 2,
-                    //     ActionURL = "https://fathym.com",
-                    //     Details = new JourneyOptionDetails()
-                    //     {
-                    //         Abstract = new List<string>()
-                    //         {
-                    //             "Multiple lines of descriptive...",
-                    //             "Paragraphs of text"
-                    //         },
-                    //         Documentation = new Dictionary<string, string>()
-                    //         {
-                    //             { "Links to", "https://fathym.com" },
-                    //             { "Different types", "https://fathym.com" },
-                    //             { "of Documentation", "https://fathym.com" }
-                    //         },
-                    //         RelatedJourneys = new Dictionary<string, string>() {
-                    //             { "Titles for journeys", "the-journey-lookup" },
-                    //             { "Titles for journeys2", "the-journey-lookup" },
-                    //             { "Titles for journeys3", "the-journey-lookup" }
-                    //         },
-                    //         Support = new Dictionary<string, string>()
-                    //         {
-                    //             { "Links to", "https://fathym.com" },
-                    //             { "Different types", "https://fathym.com" },
-                    //             { "Of Support Articles", "https://fathym.com" },
-                    //             { "Tutorials and More", "https://fathym.com" }
-                    //         }
-                    //     }
-                    // },
-                    // new JourneyOption()
-                    // {
-                    //     Name = "ABB Device Notifications and Resolution",
-                    //     Lookup = "iot-notifications-resolution",
-                    //     ContentURL = "https://player.vimeo.com/video/403508452",
-                    //     ContentType = JourneyContentTypes.Video,
-                    //     Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
-                    //     Description = "Receive notifications around configured threshholds and resolve them once addressed.",
-                    //     Roles = new List<string>(){ "IoT", "Insights" },
-                    //     Active = true,
-                    //     HighlightedOrder = 3,
-                    //     ActionURL = "https://fathym.com",
-                    //     Details = new JourneyOptionDetails()
-                    //     {
-                    //         Abstract = new List<string>()
-                    //         {
-                    //             "Multiple lines of descriptive...",
-                    //             "Paragraphs of text"
-                    //         },
-                    //         Documentation = new Dictionary<string, string>()
-                    //         {
-                    //             { "Links to", "https://fathym.com" },
-                    //             { "Different types", "https://fathym.com" },
-                    //             { "of Documentation", "https://fathym.com" }
-                    //         },
-                    //         RelatedJourneys = new Dictionary<string, string>() {
-                    //             { "Titles for journeys", "the-journey-lookup" },
-                    //             { "Titles for journeys2", "the-journey-lookup" },
-                    //             { "Titles for journeys3", "the-journey-lookup" }
-                    //         },
-                    //         Support = new Dictionary<string, string>()
-                    //         {
-                    //             { "Links to", "https://fathym.com" },
-                    //             { "Different types", "https://fathym.com" },
-                    //             { "Of Support Articles", "https://fathym.com" },
-                    //             { "Tutorials and More", "https://fathym.com" }
-                    //         }
-                    //     }
-                    // },
-                    // new JourneyOption()
-                    // {
-                    //     Name = "Augment your Data with Real-Time Surface Forecast",
-                    //     Lookup = "iot-real-time-surface-forecast",
-                    //     ContentURL = "https://player.vimeo.com/video/403508452",
-                    //     ContentType = JourneyContentTypes.Video,
-                    //     Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
-                    //     Description = "Receive notifications around configured threshholds and resolve them once addressed.",
-                    //     Roles = new List<string>(){ "IoT", "Insights" },
-                    //     Active = true,
-                    //     HighlightedOrder = 3,
-                    //     ActionURL = "https://fathym.com",
-                    //     Details = new JourneyOptionDetails()
-                    //     {
-                    //         Abstract = new List<string>()
-                    //         {
-                    //             "Multiple lines of descriptive...",
-                    //             "Paragraphs of text"
-                    //         },
-                    //         Documentation = new Dictionary<string, string>()
-                    //         {
-                    //             { "Links to", "https://fathym.com" },
-                    //             { "Different types", "https://fathym.com" },
-                    //             { "of Documentation", "https://fathym.com" }
-                    //         },
-                    //         RelatedJourneys = new Dictionary<string, string>() {
-                    //             { "Titles for journeys", "the-journey-lookup" },
-                    //             { "Titles for journeys2", "the-journey-lookup" },
-                    //             { "Titles for journeys3", "the-journey-lookup" }
-                    //         },
-                    //         Support = new Dictionary<string, string>()
-                    //         {
-                    //             { "Links to", "https://fathym.com" },
-                    //             { "Different types", "https://fathym.com" },
-                    //             { "Of Support Articles", "https://fathym.com" },
-                    //             { "Tutorials and More", "https://fathym.com" }
-                    //         }
-                    //     }
-                    // }
-                });
-            }
+                    }
+                },
+                // new JourneyOption()
+                // {
+                //     Name = "Mean, Median and Standard Deviation with Machine Learning",
+                //     Lookup = "iot-elementary-statistics",
+                //     ContentURL = "https://player.vimeo.com/video/403508452",
+                //     ContentType = JourneyContentTypes.Video,
+                //     Uses = new List<string>() { "Machine Learning", "Data Flow", "Data Applications" },
+                //     Description = "Calculate Elementary Statistics on your stream of IoT data.",
+                //     Roles = new List<string>(){ "IoT", "Data Science", "Insights" },
+                //     Active = true,
+                //     HighlightedOrder = 2,
+                //     ActionURL = "https://fathym.com",
+                //     Details = new JourneyOptionDetails()
+                //     {
+                //         Abstract = new List<string>()
+                //         {
+                //             "Multiple lines of descriptive...",
+                //             "Paragraphs of text"
+                //         },
+                //         Documentation = new Dictionary<string, string>()
+                //         {
+                //             { "Links to", "https://fathym.com" },
+                //             { "Different types", "https://fathym.com" },
+                //             { "of Documentation", "https://fathym.com" }
+                //         },
+                //         RelatedJourneys = new Dictionary<string, string>() {
+                //             { "Titles for journeys", "the-journey-lookup" },
+                //             { "Titles for journeys2", "the-journey-lookup" },
+                //             { "Titles for journeys3", "the-journey-lookup" }
+                //         },
+                //         Support = new Dictionary<string, string>()
+                //         {
+                //             { "Links to", "https://fathym.com" },
+                //             { "Different types", "https://fathym.com" },
+                //             { "Of Support Articles", "https://fathym.com" },
+                //             { "Tutorials and More", "https://fathym.com" }
+                //         }
+                //     }
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "ABB Device Notifications and Resolution",
+                //     Lookup = "iot-notifications-resolution",
+                //     ContentURL = "https://player.vimeo.com/video/403508452",
+                //     ContentType = JourneyContentTypes.Video,
+                //     Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                //     Description = "Receive notifications around configured threshholds and resolve them once addressed.",
+                //     Roles = new List<string>(){ "IoT", "Insights" },
+                //     Active = true,
+                //     HighlightedOrder = 3,
+                //     ActionURL = "https://fathym.com",
+                //     Details = new JourneyOptionDetails()
+                //     {
+                //         Abstract = new List<string>()
+                //         {
+                //             "Multiple lines of descriptive...",
+                //             "Paragraphs of text"
+                //         },
+                //         Documentation = new Dictionary<string, string>()
+                //         {
+                //             { "Links to", "https://fathym.com" },
+                //             { "Different types", "https://fathym.com" },
+                //             { "of Documentation", "https://fathym.com" }
+                //         },
+                //         RelatedJourneys = new Dictionary<string, string>() {
+                //             { "Titles for journeys", "the-journey-lookup" },
+                //             { "Titles for journeys2", "the-journey-lookup" },
+                //             { "Titles for journeys3", "the-journey-lookup" }
+                //         },
+                //         Support = new Dictionary<string, string>()
+                //         {
+                //             { "Links to", "https://fathym.com" },
+                //             { "Different types", "https://fathym.com" },
+                //             { "Of Support Articles", "https://fathym.com" },
+                //             { "Tutorials and More", "https://fathym.com" }
+                //         }
+                //     }
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Augment your Data with Real-Time Surface Forecast",
+                //     Lookup = "iot-real-time-surface-forecast",
+                //     ContentURL = "https://player.vimeo.com/video/403508452",
+                //     ContentType = JourneyContentTypes.Video,
+                //     Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
+                //     Description = "Receive notifications around configured threshholds and resolve them once addressed.",
+                //     Roles = new List<string>(){ "IoT", "Insights" },
+                //     Active = true,
+                //     HighlightedOrder = 3,
+                //     ActionURL = "https://fathym.com",
+                //     Details = new JourneyOptionDetails()
+                //     {
+                //         Abstract = new List<string>()
+                //         {
+                //             "Multiple lines of descriptive...",
+                //             "Paragraphs of text"
+                //         },
+                //         Documentation = new Dictionary<string, string>()
+                //         {
+                //             { "Links to", "https://fathym.com" },
+                //             { "Different types", "https://fathym.com" },
+                //             { "of Documentation", "https://fathym.com" }
+                //         },
+                //         RelatedJourneys = new Dictionary<string, string>() {
+                //             { "Titles for journeys", "the-journey-lookup" },
+                //             { "Titles for journeys2", "the-journey-lookup" },
+                //             { "Titles for journeys3", "the-journey-lookup" }
+                //         },
+                //         Support = new Dictionary<string, string>()
+                //         {
+                //             { "Links to", "https://fathym.com" },
+                //             { "Different types", "https://fathym.com" },
+                //             { "Of Support Articles", "https://fathym.com" },
+                //             { "Tutorials and More", "https://fathym.com" }
+                //         }
+                //     }
+                // }
+            });
         }
 
         public virtual async Task MoreDetails(string journeyLookup)
