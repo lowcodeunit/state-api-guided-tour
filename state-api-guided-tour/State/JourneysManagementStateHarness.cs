@@ -137,7 +137,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                 new JourneyOption()
                 {
                     Name = "Start Your Micro-Frontend Journey",
-                    Lookup = "iot-insights-monitoring",
+                    Lookup = "micro-frontends",
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
@@ -177,83 +177,6 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         }
                     }
                 },
-                // new JourneyOption()
-                // {
-                //     Name = "Application Development",
-                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
-                //     ContentType = JourneyContentTypes.Image,
-                //     Uses = new List<string>() { "JS Apps", "Security", "Dev Tools" },
-                //     Description = "Develop JavaScript applications in the framework of your choosing and easily deploy, secure, and manage at scale.",
-                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
-                //     ComingSoon = true,
-                //     Active = true
-                // },
-                // new JourneyOption()
-                // {
-                //     Name = "Cloud Development",
-                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
-                //     ContentType = JourneyContentTypes.Image,
-                //     Uses = new List<string>() { "DevOps", "IaC", "Data Flow" },
-                //     Description =  "Rapidly set up and manage enterprise grade, best practice cloud infrastructures and leverage them to build apps and APIs.",
-                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
-                //     ComingSoon = true,
-                //     Active = true
-                // },
-                // new JourneyOption()
-                // {
-                //     Name = "Data Development",
-                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
-                //     ContentType = JourneyContentTypes.Image,
-                //     Uses = new List<string>() { "AI/ML", "Analytics", "Reporting" },
-                //     Description =  "Develop data applications from existing and new enterprise data. Leverage existing tools with new at a rapid pace.",
-                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
-                //     ComingSoon = true,
-                //     Active = true
-                // },
-                // new JourneyOption()
-                // {
-                //     Name = "Cloud Orchestration",
-                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
-                //     ContentType = JourneyContentTypes.Image,
-                //     Uses = new List<string>() { "DevOps", "IaC", "Data Flow" },
-                //     Description =  "Rapidly set up and manage enterprise grade, best practice cloud infrastructures and leverage them to build apps and APIs.",
-                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
-                //     ComingSoon = true,
-                //     Active = true
-                // },
-                // new JourneyOption()
-                // {
-                //     Name = "Enterprise Intranets",
-                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
-                //     ContentType = JourneyContentTypes.Image,
-                //     Uses = new List<string>() { "Dashboards", "Reporting", "Identity" },
-                //     Description =  "Leverage our Enterprise IDE to rapidly pull together open source and custom LCUs to drive value in your organization.",
-                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
-                //     ComingSoon = true,
-                //     Active = true
-                // },
-                // new JourneyOption()
-                // {
-                //     Name = "Designer Tools",
-                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
-                //     ContentType = JourneyContentTypes.Image,
-                //     Uses = new List<string>() { "AI/ML", "Analytics", "Reporting" },
-                //     Description =  "Develop data applications from existing and new enterprise data. Leverage existing tools with new at a rapid pace.",
-                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Designer },
-                //     ComingSoon = true,
-                //     Active = true
-                // },
-                // new JourneyOption()
-                // {
-                //     Name = "Admin Tools",
-                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
-                //     ContentType = JourneyContentTypes.Image,
-                //     Uses = new List<string>() { "AI/ML", "Analytics", "Reporting" },
-                //     Description =  "Develop data applications from existing and new enterprise data. Leverage existing tools with new at a rapid pace.",
-                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Administrator },
-                //     ComingSoon = true,
-                //     Active = true
-                // }
             };
 
             State.Journeys.AddRange(new List<JourneyOption>()
@@ -261,7 +184,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                 new JourneyOption()
                 {
                     Name = "Start Your IoT Journey",
-                    Lookup = "iot-insights-monitoring",
+                    Lookup = "iot-starter",
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
@@ -434,6 +357,83 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                 //             { "Tutorials and More", "https://fathym.com" }
                 //         }
                 //     }
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Application Development",
+                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
+                //     ContentType = JourneyContentTypes.Image,
+                //     Uses = new List<string>() { "JS Apps", "Security", "Dev Tools" },
+                //     Description = "Develop JavaScript applications in the framework of your choosing and easily deploy, secure, and manage at scale.",
+                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
+                //     ComingSoon = true,
+                //     Active = true
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Cloud Development",
+                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
+                //     ContentType = JourneyContentTypes.Image,
+                //     Uses = new List<string>() { "DevOps", "IaC", "Data Flow" },
+                //     Description =  "Rapidly set up and manage enterprise grade, best practice cloud infrastructures and leverage them to build apps and APIs.",
+                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
+                //     ComingSoon = true,
+                //     Active = true
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Data Development",
+                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
+                //     ContentType = JourneyContentTypes.Image,
+                //     Uses = new List<string>() { "AI/ML", "Analytics", "Reporting" },
+                //     Description =  "Develop data applications from existing and new enterprise data. Leverage existing tools with new at a rapid pace.",
+                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
+                //     ComingSoon = true,
+                //     Active = true
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Cloud Orchestration",
+                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
+                //     ContentType = JourneyContentTypes.Image,
+                //     Uses = new List<string>() { "DevOps", "IaC", "Data Flow" },
+                //     Description =  "Rapidly set up and manage enterprise grade, best practice cloud infrastructures and leverage them to build apps and APIs.",
+                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
+                //     ComingSoon = true,
+                //     Active = true
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Enterprise Intranets",
+                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
+                //     ContentType = JourneyContentTypes.Image,
+                //     Uses = new List<string>() { "Dashboards", "Reporting", "Identity" },
+                //     Description =  "Leverage our Enterprise IDE to rapidly pull together open source and custom LCUs to drive value in your organization.",
+                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Developer },
+                //     ComingSoon = true,
+                //     Active = true
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Designer Tools",
+                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
+                //     ContentType = JourneyContentTypes.Image,
+                //     Uses = new List<string>() { "AI/ML", "Analytics", "Reporting" },
+                //     Description =  "Develop data applications from existing and new enterprise data. Leverage existing tools with new at a rapid pace.",
+                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Designer },
+                //     ComingSoon = true,
+                //     Active = true
+                // },
+                // new JourneyOption()
+                // {
+                //     Name = "Admin Tools",
+                //     ContentURL = "https://www.google.com/logos/doodles/2020/thank-you-grocery-workers-6753651837108758.2-law.gif",
+                //     ContentType = JourneyContentTypes.Image,
+                //     Uses = new List<string>() { "AI/ML", "Analytics", "Reporting" },
+                //     Description =  "Develop data applications from existing and new enterprise data. Leverage existing tools with new at a rapid pace.",
+                //     Roles = new List<JourneyRoleTypes>(){ JourneyRoleTypes.Administrator },
+                //     ComingSoon = true,
+                //     Active = true
                 // }
             });
         }
