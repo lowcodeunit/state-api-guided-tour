@@ -142,7 +142,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
                     Description = @"<p>An application orchestration environment has been setup that will support you in developing your cloud-native solutions. In this part of the guide, we walk you through deploying and leveraging existing Low Code Units and how to use the Fathym LCU CLI to create and deliver your first micro-frontends.</p>
-                    <p>Read the <a href=""https://fathym-it.com/framework/docs/getting-started/try-it/micro-frontends"">full docs</a> on Fathym Framework micro-frontends now.</p>",
+                    <p>Read the <a href=""https://www.fathym-it.com/framework/docs/getting-started/try-it/micro-frontends"" target = ""_blank"">full docs</a> on Fathym Framework micro-frontends now.</p>",
                     Roles = new List<string>(){ "IoT", "Insights" },
                     Active = true,
                     HighlightedOrder = 1,
