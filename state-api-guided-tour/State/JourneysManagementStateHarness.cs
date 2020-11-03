@@ -93,49 +93,6 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
             {
                 new JourneyOption()
                 {
-                    Name = "IoT - To the Edge and Beyond!",
-                    Lookup = "iot-edge-beyond",
-                    ContentURL = "https://player.vimeo.com/video/403508452",
-                    ContentType = JourneyContentTypes.Video,
-                    Uses = new List<string>() { "Devices", "Data Flow", "Data Science" },
-                    Description = "Build and connect edge devices, securely manage, visualize and analyze your data, and take action on your intelligence.",
-                    Roles = new List<string>(){ "IoT", "Data Science" },
-                    ActionURL = "https://fathym.com",
-                    Active = true,
-                    Details = new JourneyOptionDetails()
-                    {
-                        Abstract = new List<string>()
-                        {
-                            "Multiple lines of descriptive...",
-                            "Paragraphs of text"
-                        },
-                        Documentation = new Dictionary<string, string>()
-                        {
-                            { "Links to", "https://fathym.com" },
-                            { "Different types", "https://fathym.com" },
-                            { "of Documentation", "https://fathym.com" }
-                        },
-                        RelatedJourneys = new Dictionary<string, string>() {
-                            { "Titles for journeys", "the-journey-lookup" },
-                            { "Titles for journeys2", "the-journey-lookup" },
-                            { "Titles for journeys3", "the-journey-lookup" }
-                        },
-                        Support = new Dictionary<string, string>()
-                        {
-                            { "Links to", "https://fathym.com" },
-                            { "Different types", "https://fathym.com" },
-                            { "Of Support Articles", "https://fathym.com" },
-                            { "Tutorials and More", "https://fathym.com" }
-                        },
-                        SupportConfig = new LazyElementConfig()
-                        {
-                            Assets = new List<string>() { "/_lcu/lcu-guided-tour-lcu/wc/lcu-guided-tour.lcu.js" },
-                            ElementName = "lcu-guided-tour-journey-details-iot-edge-beyond-element"
-                        }
-                    }
-                },
-                new JourneyOption()
-                {
                     Name = "Start Your Micro-Frontend Journey",
                     Lookup = "micro-frontends",
                     ContentURL = "https://player.vimeo.com/video/403508452",
