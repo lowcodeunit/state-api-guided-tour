@@ -35,8 +35,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         #endregion
 
         #region Constructors
-        public JourneysManagementStateHarness(JourneysManagementState state)
-            : base(state ?? new JourneysManagementState())
+        public JourneysManagementStateHarness(JourneysManagementState state, ILogger log)
+            : base(state ?? new JourneysManagementState(), log)
         { }
         #endregion
 
@@ -98,8 +98,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
-                    Description = @"<p>Micro-frontends is an architectural approach that facilitates breaking down and modularizing frontend monoliths into smaller, decoupled units. These micro frontends can be developed, tested, upgraded and deployed independently, while still contributing to a single cohesive application or product. </p>
-                            <p>An application orchestration environment has been set up that will support you in developing your cloud-native solutions. We will walk you through deploying and leveraging existing Low Code Units and how to use the Fathym LCU CLI to create and deliver your first micro-frontends.</p>",
+                    Description = @"<p>Fathym enables you to break down your frontend monolith into decoupled micro frontends. Fathym seamlessly orchestrates web components that can be used to build modular and repeatable solutions. </p>
+                            <p>Discover how you can adopt a micro frontends architecture for faster, repeatable and independently deliverable frontend development. </p>",
                     Roles = new List<string>(){ "IoT", "Insights" },
                     Active = true,
                     HighlightedOrder = 1,
@@ -108,7 +108,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     {
                         Abstract = new List<string>()
                         {
-                            
+                            @"<p>Micro-frontends is an architectural approach that facilitates breaking down and modularizing frontend monoliths into smaller, decoupled units. These micro frontends can be developed, tested, upgraded and deployed independently, while still contributing to a single cohesive application or product. </p>
+                            <p>An application orchestration environment has been set up that will support you in developing your cloud-native solutions. We will walk you through deploying and leveraging existing Low Code Units and how to use the Fathym LCU CLI to create and deliver your first micro-frontends.</p>",
                         },
                         Documentation = new Dictionary<string, string>()
                         {
@@ -147,9 +148,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
-                    Description = @"<p>Fathym enables users to easily configure an end-to-end best practice cloud infrastructure for streaming emulated or device data in your Azure environment. You can quickly and easily visualize and gain insight from your data. </p>
-                                    <p>In this template, we have provisioned a best practice emulated data flow for you to get started. This consists of Azure resources, such as IoT Hub, Stream Analytics and Cosmos DB, and connects to Freeboard, an open-source data visualization tool. </p> 
-                                    <p>Get started with this template and discover how easy it is to configure and provision your own through the resources below.</p>",
+                    Description =   @"<p>We have set up a template that enables you to start working with your devices and data immediately.</p>  
+                                    <p>Start exploring to see your data visualized in minutes on a best practice cloud infrastructure setup for Azure. Connect with your favorite tools or let us help you explore some new ones. </p>",
                     Roles = new List<string>(){ "IoT", "Insights" },
                     Active = true,
                     HighlightedOrder = 1,
@@ -157,8 +157,10 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     Details = new JourneyOptionDetails()
                     {
                         Abstract = new List<string>()
-                        {
-                            
+                        {                                
+                            @"<p>Fathym enables users to easily configure an end-to-end best practice cloud infrastructure for streaming emulated or device data in your Azure environment. You can quickly and easily visualize and gain insight from your data. </p>
+                                <p>In this template, we have provisioned a best practice emulated data flow for you to get started. This consists of Azure resources, such as IoT Hub, Stream Analytics and Cosmos DB, and connects to Freeboard, an open-source data visualization tool. </p> 
+                                <p>Get started with this template and discover how easy it is to configure and provision your own through the resources below.</p>",
                         },
                         Documentation = new Dictionary<string, string>()
                         {

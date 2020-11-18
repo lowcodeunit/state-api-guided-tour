@@ -35,8 +35,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.ToursManagement.State
         #endregion
 
         #region Constructors
-        public ToursManagementStateHarness(ToursManagementState state)
-            : base(state ?? new ToursManagementState())
+        public ToursManagementStateHarness(ToursManagementState state, ILogger log)
+            : base(state ?? new ToursManagementState(), log)
         { }
         #endregion
 
