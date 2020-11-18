@@ -35,8 +35,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         #endregion
 
         #region Constructors
-        public JourneysManagementStateHarness(JourneysManagementState state)
-            : base(state ?? new JourneysManagementState())
+        public JourneysManagementStateHarness(JourneysManagementState state, ILogger log)
+            : base(state ?? new JourneysManagementState(), log)
         { }
         #endregion
 
@@ -99,7 +99,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
                     Description = @"<p>Fathym enables you to break down your frontend monolith into decoupled micro frontends. Fathym seamlessly orchestrates web components that can be used to build modular and repeatable solutions. </p>
-                            <p>Discover how you can adopt a micro frontends architecture for faster, repeatable and independently deliverable frontend development. </p>,
+                            <p>Discover how you can adopt a micro frontends architecture for faster, repeatable and independently deliverable frontend development. </p>",
                     Roles = new List<string>(){ "IoT", "Insights" },
                     Active = true,
                     HighlightedOrder = 1,
