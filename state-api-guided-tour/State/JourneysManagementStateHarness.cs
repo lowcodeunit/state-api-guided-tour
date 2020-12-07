@@ -35,8 +35,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
         #endregion
 
         #region Constructors
-        public JourneysManagementStateHarness(JourneysManagementState state)
-            : base(state ?? new JourneysManagementState())
+        public JourneysManagementStateHarness(JourneysManagementState state, ILogger log)
+            : base(state ?? new JourneysManagementState(), log)
         { }
         #endregion
 
@@ -98,8 +98,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
-                    Description = @"<p>An application orchestration environment has been setup that will support you in developing your cloud-native solutions. In this part of the guide, we walk you through deploying and leveraging existing Low Code Units and how to use the Fathym LCU CLI to create and deliver your first micro-frontends.</p>
-                    <p>Read the <a href=""https://www.fathym-it.com/framework/docs/getting-started/try-it/micro-frontends"" target = ""_blank"">full docs</a> on Fathym Framework micro-frontends now.</p>",
+                    Description = @"<p>Fathym enables you to break down your frontend monolith into decoupled micro frontends. Fathym seamlessly orchestrates web components that can be used to build modular and repeatable solutions. </p>
+                            <p>Discover how you can adopt a micro frontends architecture for faster, repeatable and independently deliverable frontend development. </p>",
                     Roles = new List<string>(){ "IoT", "Insights" },
                     Active = true,
                     HighlightedOrder = 1,
@@ -108,23 +108,26 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     {
                         Abstract = new List<string>()
                         {
-                            @"Some more descriptive text",
-                            @"Even more descriptive text..."
+                            @"<p>Micro-frontends is an architectural approach that facilitates breaking down and modularizing frontend monoliths into smaller, decoupled units. These micro frontends can be developed, tested, upgraded and deployed independently, while still contributing to a single cohesive application or product. </p>
+                            <p>An application orchestration environment has been set up that will support you in developing your cloud-native solutions. We will walk you through deploying and leveraging existing Low Code Units and how to use the Fathym LCU CLI to create and deliver your first micro-frontends.</p>",
                         },
                         Documentation = new Dictionary<string, string>()
                         {
-                            { "Using Freeboard with Fathym", "https://fathym.com" },
-                            { "Configuring Freeboard with Custom Dashboard", "https://fathym.com" },
-                            { "Deliver Open Source Tools on Fathym", "https://fathym.com" }
+                            { "Micro Frontends Overview", "/framework/docs/getting-started/try-it/micro-frontends" },
+                            { "Deploy App", "/framework/docs/getting-started/try-it/micro-frontends/deploy-app" },
+                            { "Deploy IDE Blade", "/framework/docs/getting-started/try-it/micro-frontends/deploy-ide-blade" },
+                            { "Customize App", "/framework/docs/getting-started/try-it/micro-frontends/customize-app" },
+                            { "Create & Deploy LCU", "/framework/docs/getting-started/try-it/micro-frontends/create-deploy-custom-lcu" }
                         },
                         RelatedJourneys = new Dictionary<string, string>() {
-                            { "IoT - To the Edge and Beyond", "iot-edge-beyond" }
+                            { "Start Your IoT Journey", "/freeboard" }
                         },
                         Support = new Dictionary<string, string>()
                         {
+                            { "Host an Application", "/freeboard" },
+                            { "View Low-Code Units", "/_lcu" },
+                            { "Design Principles", "/framework/docs/getting-started/for-devs/design-principals" },
                             { "Real-Time Insights & Monitoring", "/freeboard" },
-                            { "A blog about freeboard on fathym", "https://fathym.com" },
-                            { "Another blog about freeboard on fathym", "https://fathym.com" },
                             { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
                         },
                         SupportConfig = new LazyElementConfig()
@@ -145,18 +148,8 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     ContentURL = "https://player.vimeo.com/video/403508452",
                     ContentType = JourneyContentTypes.Video,
                     Uses = new List<string>() { "Freeboard", "Data Applications", "Data Flow" },
-                    Description = @"<p>
-                    We have setup a few things automatically for you. This
-                    will allow you to start working with your devices and data
-                    immediately. Start exploring to see your data visualized
-                    in minutes on a best practice cloud setup for Azure.
-                </p>
-
-                <p>
-                    Your data is ready to begin using. Connect it with your
-                    favorite tools or let us help you walk through learning
-                    some new ones.
-                </p>",
+                    Description =   @"<p>We have set up a template that enables you to start working with your devices and data immediately.</p>  
+                                    <p>Start exploring to see your data visualized in minutes on a best practice cloud infrastructure setup for Azure. Connect with your favorite tools or let us help you explore some new ones. </p>",
                     Roles = new List<string>(){ "IoT", "Insights" },
                     Active = true,
                     HighlightedOrder = 1,
@@ -164,32 +157,25 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                     Details = new JourneyOptionDetails()
                     {
                         Abstract = new List<string>()
-                        {
-                            @"We have setup a few things automatically for you. This
-                    will allow you to start working with your devices and data
-                    immediately. Start exploring to see your data visualized
-                    in minutes on a best practice cloud setup for Azure.",
-                            @"Your data is ready to begin using. Connect it with your
-                    favorite tools or let us help you walk through learning
-                    some new ones."
+                        {                                
+                            @"<p>Fathym enables users to easily configure an end-to-end best practice cloud infrastructure for streaming emulated or device data in your Azure environment. You can quickly and easily visualize and gain insight from your data. </p>
+                                <p>In this template, we have provisioned a best practice emulated data flow for you to get started. This consists of Azure resources, such as IoT Hub, Stream Analytics and Cosmos DB, and connects to Freeboard, an open-source data visualization tool. </p> 
+                                <p>Get started with this template and discover how easy it is to configure and provision your own through the resources below.</p>",
                         },
                         Documentation = new Dictionary<string, string>()
                         {
-                            { "Using Freeboard with Fathym", "https://fathym.com" },
-                            { "Configuring Freeboard with Custom Dashboard", "https://fathym.com" },
-                            { "Deliver Open Source Tools on Fathym", "https://fathym.com" }
+                            { "An Introduction to Data Flows", "https://fathym.com" },
+                            { "How to Create and Provision Data Flows", "https://fathym.com" },
+                            { "How to Create a Real-Time Data Dashboard using Freeboard", "https://fathym.com" },
+                            { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" }
                         },
                         RelatedJourneys = new Dictionary<string, string>() {
-                            { "Titles for journeys", "the-journey-lookup" },
-                            { "Titles for journeys2", "the-journey-lookup" },
-                            { "Titles for journeys3", "the-journey-lookup" }
+                            { "Micro-Frontends Journey", "/micro-frontends" }
                         },
                         Support = new Dictionary<string, string>()
                         {
-                            { "Real-Time Insights & Monitoring", "/freeboard" },
-                            { "A blog about freeboard on fathym", "https://fathym.com" },
-                            { "Another blog about freeboard on fathym", "https://fathym.com" },
-                            { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
+                            { "View Emulated Data in Freeboard", "/freeboard" },
+                            { "View Template Data Flow", "/freeboard" }
                         },
                         SupportConfig = new LazyElementConfig()
                         {
