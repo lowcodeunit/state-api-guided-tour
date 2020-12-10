@@ -113,20 +113,20 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         },
                         Documentation = new Dictionary<string, string>()
                         {
-                            { "Micro Frontends Overview", "/framework/docs/getting-started/try-it/micro-frontends" },
-                            { "Deploy App", "/framework/docs/getting-started/try-it/micro-frontends/deploy-app" },
-                            { "Deploy IDE Blade", "/framework/docs/getting-started/try-it/micro-frontends/deploy-ide-blade" },
-                            { "Customize App", "/framework/docs/getting-started/try-it/micro-frontends/customize-app" },
-                            { "Create & Deploy LCU", "/framework/docs/getting-started/try-it/micro-frontends/create-deploy-custom-lcu" }
+                            { "Micro Frontends Overview", "https://www.fathym-it.com/framework/docs/getting-started/try-it/micro-frontends" },
+                            { "Deploy App", "https://www.fathym-it.com/framework/docs/getting-started/try-it/micro-frontends/deploy-app" },
+                            { "Deploy IDE Blade", "https://www.fathym-it.com/framework/docs/getting-started/try-it/micro-frontends/deploy-ide-blade" },
+                            { "Customize App", "https://www.fathym-it.com/framework/docs/getting-started/try-it/micro-frontends/customize-app" },
+                            { "Create & Deploy LCU", "https://www.fathym-it.com/framework/docs/getting-started/try-it/micro-frontends/create-deploy-custom-lcu" }
                         },
                         RelatedJourneys = new Dictionary<string, string>() {
-                            { "Start Your IoT Journey", "/freeboard" }
+                            // { "Start Your IoT Journey", "/freeboard" }
                         },
                         Support = new Dictionary<string, string>()
                         {
-                            { "Host an Application", "/freeboard" },
-                            { "View Low-Code Units", "/_lcu" },
-                            { "Design Principles", "/framework/docs/getting-started/for-devs/design-principals" },
+                            // { "Host an Application", "/freeboard" },
+                            // { "View Low-Code Units", "/_lcu" },
+                            { "Design Principles", "https://www.fathym-it.com/framework/docs/getting-started/for-devs/design-principals" },
                             { "Real-Time Insights & Monitoring", "/freeboard" },
                             { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" },
                         },
@@ -164,18 +164,18 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         },
                         Documentation = new Dictionary<string, string>()
                         {
-                            { "An Introduction to Data Flows", "https://fathym.com" },
-                            { "How to Create and Provision Data Flows", "https://fathym.com" },
-                            { "How to Create a Real-Time Data Dashboard using Freeboard", "https://fathym.com" },
+                            { "An Introduction to Data Flows", "https://support.fathym.com/docs/en/an-introduction-to-data-flows" },
+                            { "How to Create and Provision Data Flows", "https://support.fathym.com/docs/en/create-and-provision-data-flows" },
+                            { "How to Create a Real-Time Data Dashboard using Freeboard", "https://support.fathym.com/docs/en/freeboard" },
                             { "Freeboard Documentation", "https://github.com/Freeboard/freeboard" }
                         },
                         RelatedJourneys = new Dictionary<string, string>() {
-                            { "Micro-Frontends Journey", "/micro-frontends" }
+                            // { "Micro-Frontends Journey", "/micro-frontends" }
                         },
                         Support = new Dictionary<string, string>()
                         {
-                            { "View Emulated Data in Freeboard", "/freeboard" },
-                            { "View Template Data Flow", "/freeboard" }
+                            // { "View Emulated Data in Freeboard", "/freeboard" },
+                            // { "View Template Data Flow", "/freeboard" }
                         },
                         SupportConfig = new LazyElementConfig()
                         {
