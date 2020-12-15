@@ -174,7 +174,7 @@ namespace LCU.State.API.NapkinIDE.NapkinIDE.JourneysManagement.State
                         },
                         Support = new Dictionary<string, string>()
                         {
-                            // { "View Emulated Data in Freeboard", "/freeboard" },
+                            { "View Emulated Data in Freeboard", "/freeboard" },
                             // { "View Template Data Flow", "/freeboard" }
                         },
                         SupportConfig = new LazyElementConfig()
